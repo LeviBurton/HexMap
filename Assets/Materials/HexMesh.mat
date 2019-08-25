@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: HexCell
-  m_Shader: {fileID: -6465566751694194690, guid: f348c80f2f2734d4591413b8535df1f8,
+  m_Name: HexMesh
+  m_Shader: {fileID: -6465566751694194690, guid: b0374962ceb16fb43a1657bb23855a89,
     type: 3}
   m_ShaderKeywords: _ENVIRONMENTREFLECTIONS_OFF _NORMALMAP
   m_LightmapFlags: 4

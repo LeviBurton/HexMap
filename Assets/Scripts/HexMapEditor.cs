@@ -4,12 +4,13 @@ using UnityEngine.EventSystems;
 public class HexMapEditor : MonoBehaviour {
 
 	public Color[] colors;
-
 	public HexGrid hexGrid;
 
-	private Color activeColor;
+    Color activeColor;
+    int activeElevation;
+    bool renderWireframe;
 
-	void Awake()
+    void Awake()
     {
         SelectColor(0);
     }
@@ -18,8 +19,6 @@ public class HexMapEditor : MonoBehaviour {
     {
         var mouseButton = Input.GetMouseButton(0);
         var isPointerOverGameObject = EventSystem.current.IsPointerOverGameObject();
-
-        //Debug.Log(mouseButton.ToString() + ", " + isPointerOverGameObject);
 
         if (mouseButton && !isPointerOverGameObject)
         {
@@ -31,16 +30,33 @@ public class HexMapEditor : MonoBehaviour {
     {
         Ray inputRay = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
+
         if (Physics.Raycast(inputRay, out hit))
         {
-            Debug.Log("hit a hex");
-
-            hexGrid.ColorCell(hit.point, activeColor);
+            EditCell(hexGrid.GetCell(hit.point));
         }
+    }
+
+    void EditCell(HexCell cell)
+    {
+        cell.color = activeColor;
+        cell.Elevation = activeElevation;
+
+        hexGrid.Refresh();
+    }
+
+    public void SetElevation(float elevation)
+    {
+        activeElevation = (int)elevation;
     }
 
     public void SelectColor(int index)
     {
         activeColor = colors[index];
+    }
+
+    public void EnableWireframe(bool enabled)
+    {
+        hexGrid.EnableWireframe(enabled);
     }
 }
