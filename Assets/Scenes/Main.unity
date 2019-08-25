@@ -745,9 +745,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colors:
-  - {r: 0.8460461, g: 1, b: 0, a: 0}
-  - {r: 0, g: 1, b: 0.12997723, a: 0}
-  - {r: 0, g: 0.16926694, b: 1, a: 0}
+  - {r: 0.70321864, g: 0.8301887, b: 0, a: 0}
+  - {r: 0.0033819948, g: 0.7169812, b: 0.095730074, a: 0}
+  - {r: 0, g: 0.116130255, b: 0.6886792, a: 0}
   - {r: 1, g: 1, b: 1, a: 0}
   hexGrid: {fileID: 979159610}
 --- !u!114 &333201876
@@ -1501,13 +1501,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 857627854}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalRotation: {x: 0.7245104, y: 0.047141712, z: 0.02862779, w: 0.68705374}
+  m_LocalPosition: {x: 0, y: 40.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 83.147, y: 117.05701, z: 115.55401}
 --- !u!1 &877370023
 GameObject:
   m_ObjectHideFlags: 0
