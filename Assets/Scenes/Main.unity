@@ -1943,6 +1943,7 @@ MonoBehaviour:
     type: 3}
   cellLabelPrefab: {fileID: 4198025654376038145, guid: 358aaf41d105507499aa5b7915a7df11,
     type: 3}
+  noiseSource: {fileID: 2800000, guid: 3d3c8fab656b93d4093cadb48e4712b2, type: 3}
 --- !u!4 &979159611
 Transform:
   m_ObjectHideFlags: 0
@@ -2534,7 +2535,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, Unity.ugui, Version=1.0.0.0, Culture=neutral,
       PublicKeyToken=null
-  m_IsOn: 0
+  m_IsOn: 1
 --- !u!1 &1820857607
 GameObject:
   m_ObjectHideFlags: 0
@@ -3233,7 +3234,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, Unity.ugui, Version=1.0.0.0, Culture=neutral,
       PublicKeyToken=null
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!1 &2085827267
 GameObject:
   m_ObjectHideFlags: 0

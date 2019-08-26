@@ -4,13 +4,17 @@ public static class HexMetrics
 {
     public const float outerRadius = 10f;
     public const float innerRadius = outerRadius * 0.866025404f;
-    public const float solidFactor = 0.75f;
+    public const float solidFactor = 0.8f;  // make flat cell centers larger for more content
     public const float blendFactor = 1f - solidFactor;
-    public const float elevationStep = 5f;
+    public const float elevationStep = 3f;
     public const int terracesPerSlope = 2;
     public const int terraceSteps = terracesPerSlope * 2 + 1;
     public const float horizontalTerraceStepSize = 1f / terraceSteps;
     public const float verticalTerraceStepSize = 1f / (terracesPerSlope + 1);
+    public static Texture2D noiseSource;
+    public const float cellPerturbStrength = 4f;
+    public const float noiseScale = 0.003f;
+    public const float elevationPerturbStrength = 1.5f;
 
     static Vector3[] corners = {
         new Vector3(0f, 0f, outerRadius),
@@ -21,6 +25,15 @@ public static class HexMetrics
         new Vector3(-innerRadius, 0f, 0.5f * outerRadius),
         new Vector3(0f, 0f, outerRadius)
     };
+
+    
+    public static Vector4 SampleNoise(Vector3 position)
+    {
+        return noiseSource.GetPixelBilinear(
+           position.x * noiseScale,
+           position.z * noiseScale
+       );
+    }
 
     public static Vector3 TerraceLerp(Vector3 a, Vector3 b, int step)
     {

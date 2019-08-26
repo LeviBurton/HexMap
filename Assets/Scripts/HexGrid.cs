@@ -5,10 +5,10 @@ public class HexGrid : MonoBehaviour
 {
     public int width = 6;
     public int height = 6;
-
     public Color defaultColor = Color.white;
     public HexCell cellPrefab;
     public TMPro.TextMeshProUGUI cellLabelPrefab;
+    public Texture2D noiseSource;
 
     HexCell[] cells;
     Canvas gridCanvas;
@@ -17,8 +17,14 @@ public class HexGrid : MonoBehaviour
     Material[] meshMaterials;
     Material wireframeMaterial;
 
+    void OnEnable()
+    {
+        HexMetrics.noiseSource = noiseSource;
+    }
+
     void Awake()
     {
+        HexMetrics.noiseSource = noiseSource;
         gridCanvas = GetComponentInChildren<Canvas>();
         hexMesh = GetComponentInChildren<HexMesh>();
         wireframeMaterial = Resources.Load<Material>("Wireframe");
@@ -97,6 +103,7 @@ public class HexGrid : MonoBehaviour
         label.rectTransform.anchoredPosition = new Vector2(position.x, position.z);
         label.text = cell.coordinates.ToStringOnSeparateLines();
         cell.uiRect = label.rectTransform;
+        cell.Elevation = 0;
     }
 
     public void EnableWireframe(bool enabled)
