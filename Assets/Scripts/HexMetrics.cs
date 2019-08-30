@@ -2,9 +2,12 @@
 
 public static class HexMetrics {
 
+	public const float outerToInner = 0.866025404f;
+	public const float innerToOuter = 1f / outerToInner;
+
 	public const float outerRadius = 10f;
 
-	public const float innerRadius = outerRadius * 0.866025404f;
+	public const float innerRadius = outerRadius * outerToInner;
 
 	public const float solidFactor = 0.8f;
 
@@ -20,7 +23,7 @@ public static class HexMetrics {
 
 	public const float verticalTerraceStepSize = 1f / (terracesPerSlope + 1);
 
-	public const float cellPerturbStrength = 0f;
+	public const float cellPerturbStrength = 0f; // 4f;
 
 	public const float elevationPerturbStrength = 1.5f;
 
@@ -63,6 +66,12 @@ public static class HexMetrics {
 
 	public static Vector3 GetSecondSolidCorner (HexDirection direction) {
 		return corners[(int)direction + 1] * solidFactor;
+	}
+
+	public static Vector3 GetSolidEdgeMiddle (HexDirection direction) {
+		return
+			(corners[(int)direction] + corners[(int)direction + 1]) *
+			(0.5f * solidFactor);
 	}
 
 	public static Vector3 GetBridge (HexDirection direction) {

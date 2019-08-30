@@ -111,7 +111,6 @@ public class HexMapEditor : MonoBehaviour
             if (previousCell.GetNeighbor(dragDirection) == currentCell)
             {
                 isDrag = true;
-                Debug.Log(isDrag);  
                 return;
             }
         }
