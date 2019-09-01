@@ -108,7 +108,16 @@ public class HexCell : MonoBehaviour {
 		}
 	}
 
-	Color color;
+    public float RiverSurfaceY
+    {
+        get
+        {
+            return
+                (elevation + HexMetrics.riverSurfaceElevationOffset) *
+                HexMetrics.elevationStep;
+        }
+    }
+    Color color;
 
 	int elevation = int.MinValue;
 

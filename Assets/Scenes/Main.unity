@@ -2350,7 +2350,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 9
   m_Type: 1
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9934153, g: 1, b: 0.8160377, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -3036,7 +3036,7 @@ MonoBehaviour:
     type: 3}
   chunkPrefab: {fileID: 5405047154794636541, guid: 7df4d3be96642d843bf490dbb8efacb4,
     type: 3}
-  noiseSource: {fileID: 2800000, guid: 3d3c8fab656b93d4093cadb48e4712b2, type: 3}
+  noiseSource: {fileID: 2800000, guid: 38701cdeb1fb9427cbb585f917aa59cb, type: 3}
 --- !u!4 &979159611
 Transform:
   m_ObjectHideFlags: 0

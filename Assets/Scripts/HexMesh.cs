@@ -1,12 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using System;
 
 [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
 public class HexMesh : MonoBehaviour {
+    [NonSerialized] List<Vector3> vertices;
+    [NonSerialized] List<Color> colors;
+    [NonSerialized] List<int> triangles;
+    public bool useCollider;
+    public bool useColors;
 
-	static List<Vector3> vertices = new List<Vector3>();
-	static List<Color> colors = new List<Color>();
-	static List<int> triangles = new List<int>();
+    public bool useUVCoordinates;
+    [NonSerialized] List<Vector2> uvs;
 
 	Mesh hexMesh;
 	MeshCollider meshCollider;
@@ -15,7 +20,10 @@ public class HexMesh : MonoBehaviour {
 
     void Awake () {
 		GetComponent<MeshFilter>().mesh = hexMesh = new Mesh();
-		meshCollider = gameObject.AddComponent<MeshCollider>();
+        if (useCollider)
+        {
+            meshCollider = gameObject.AddComponent<MeshCollider>();
+        }
         wireframeMaterial = Resources.Load<Material>("Wireframe");
         meshMaterials = GetComponent<MeshRenderer>().materials;
         hexMesh.name = "Hex Mesh";
@@ -42,19 +50,67 @@ public class HexMesh : MonoBehaviour {
     public void Clear()
     {
         hexMesh.Clear();
-        vertices.Clear();
-        colors.Clear();
-        triangles.Clear();
+        vertices = ListPool<Vector3>.Get();
+        if (useColors)
+        {
+            colors = ListPool<Color>.Get();
+        }
+
+        if (useUVCoordinates)
+        {
+            uvs = ListPool<Vector2>.Get();
+        }
+        triangles = ListPool<int>.Get();
     }
 
     public void Apply()
     {
         hexMesh.SetVertices(vertices);
-        hexMesh.SetColors(colors);
+        ListPool<Vector3>.Add(vertices);
+        if (useColors)
+        {
+            hexMesh.SetColors(colors);
+            ListPool<Color>.Add(colors);
+        }
+
+        if (useUVCoordinates)
+        {
+            hexMesh.SetUVs(0, uvs);
+            ListPool<Vector2>.Add(uvs);
+        }
+
         hexMesh.SetTriangles(triangles, 0);
+        ListPool<int>.Add(triangles);
         hexMesh.RecalculateNormals();
-        meshCollider.sharedMesh = hexMesh;
+        if (useCollider)
+        {
+            meshCollider.sharedMesh = hexMesh;
+        }
     }
+
+    public void AddTriangleUV(Vector2 uv1, Vector2 uv2, Vector2 uv3)
+    {
+        uvs.Add(uv1);
+        uvs.Add(uv2);
+        uvs.Add(uv3);
+    }
+
+    public void AddQuadUV(Vector2 uv1, Vector2 uv2, Vector2 uv3, Vector2 uv4)
+    {
+        uvs.Add(uv1);
+        uvs.Add(uv2);
+        uvs.Add(uv3);
+        uvs.Add(uv4);
+    }
+
+    public void AddQuadUV(float uMin, float uMax, float vMin, float vMax)
+    {
+        uvs.Add(new Vector2(uMin, vMin));
+        uvs.Add(new Vector2(uMax, vMin));
+        uvs.Add(new Vector2(uMin, vMax));
+        uvs.Add(new Vector2(uMax, vMax));
+    }
+
     public void AddTriangle (Vector3 v1, Vector3 v2, Vector3 v3) {
 		int vertexIndex = vertices.Count;
 		vertices.Add(HexMetrics.Perturb(v1));
