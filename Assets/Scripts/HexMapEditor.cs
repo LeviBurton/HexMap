@@ -68,7 +68,12 @@ public class HexMapEditor : MonoBehaviour
 
     void Awake()
     {
-        SelectColor(0);
+        SelectColor(-1);
+        SetRoadMode(0);
+        SetRiverMode(0);
+        SetElevation(0);
+        
+        SetApplyElevation(false);
     }
 
     void Update()
@@ -152,6 +157,7 @@ public class HexMapEditor : MonoBehaviour
             {
                 cell.Color = activeColor;
             }
+
             if (applyElevation)
             {
                 cell.Elevation = activeElevation;

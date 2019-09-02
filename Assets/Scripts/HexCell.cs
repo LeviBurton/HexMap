@@ -84,7 +84,15 @@ public class HexCell : MonoBehaviour {
 		}
 	}
 
-	public bool HasIncomingRiver {
+    public HexDirection RiverBeginOrEndDirection
+    {
+        get
+        {
+            return hasIncomingRiver ? incomingRiver : outgoingRiver;
+        }
+    }
+
+    public bool HasIncomingRiver {
 		get {
 			return hasIncomingRiver;
 		}
