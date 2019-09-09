@@ -4,7 +4,7 @@
 
 float Foam_float(float shore, float2 worldXZ, Texture2D noiseTex, SamplerState ss) {
 	//	float shore = IN.uv_MainTex.y;
-	shore = sqrt(shore);
+	shore = sqrt(shore) * 0.9;
 
 	float2 noiseUV = worldXZ + _Time.y * 0.25;
 	float4 noise = SAMPLE_TEXTURE2D(noiseTex, ss, noiseUV * 0.015);
