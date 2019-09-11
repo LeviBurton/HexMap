@@ -9,6 +9,8 @@ public class HexCell : MonoBehaviour
 
     public HexGridChunk chunk;
 
+    int urbanLevel, farmLevel, plantLevel;
+
     public Color Color
     {
         get
@@ -23,6 +25,38 @@ public class HexCell : MonoBehaviour
             }
             color = value;
             Refresh();
+        }
+    }
+
+    public int FarmLevel
+    {
+        get
+        {
+            return farmLevel;
+        }
+        set
+        {
+            if (farmLevel != value)
+            {
+                farmLevel = value;
+                RefreshSelfOnly();
+            }
+        }
+    }
+
+    public int PlantLevel
+    {
+        get
+        {
+            return plantLevel;
+        }
+        set
+        {
+            if (plantLevel != value)
+            {
+                plantLevel = value;
+                RefreshSelfOnly();
+            }
         }
     }
 
@@ -97,8 +131,6 @@ public class HexCell : MonoBehaviour
             }
         }
     }
-
-    int urbanLevel;
 
     bool IsValidRiverDestination(HexCell neighbor)
     {
