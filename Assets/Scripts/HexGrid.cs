@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class HexGrid : MonoBehaviour {
 
 	public int chunkCountX = 4, chunkCountZ = 3;
+    public int seed;
 
 	public Color defaultColor = Color.white;
 
@@ -19,6 +20,7 @@ public class HexGrid : MonoBehaviour {
 
 	void Awake () {
 		HexMetrics.noiseSource = noiseSource;
+        HexMetrics.InitializeHashGrid(seed);
 
 		cellCountX = chunkCountX * HexMetrics.chunkSizeX;
 		cellCountZ = chunkCountZ * HexMetrics.chunkSizeZ;
@@ -48,9 +50,14 @@ public class HexGrid : MonoBehaviour {
 		}
 	}
 
-	void OnEnable () {
-		HexMetrics.noiseSource = noiseSource;
-	}
+    void OnEnable()
+    {
+        if (!HexMetrics.noiseSource)
+        {
+            HexMetrics.noiseSource = noiseSource;
+            HexMetrics.InitializeHashGrid(seed);
+        }
+    }
 
 	public HexCell GetCell (Vector3 position) {
 		position = transform.InverseTransformPoint(position);

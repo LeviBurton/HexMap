@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
 
-public static class HexMetrics {
+public static class HexMetrics
+{
+    public const int hashGridSize = 256;
 
-	public const float outerToInner = 0.866025404f;
+    public const float outerToInner = 0.866025404f;
+
 	public const float innerToOuter = 1f / outerToInner;
 
 	public const float outerRadius = 10f;
@@ -54,6 +57,49 @@ public static class HexMetrics {
         return (corners[(int)direction] + corners[(int)direction + 1]) *
             waterBlendFactor;
     }
+
+    static HexHash[] hashGrid;
+    public static void InitializeHashGrid(int seed)
+    {
+        hashGrid = new HexHash[hashGridSize * hashGridSize];
+        Random.State currentState = Random.state;
+
+        Random.InitState(seed);
+        for (int i = 0; i < hashGrid.Length; i++)
+        {
+            hashGrid[i] = HexHash.Create();
+        }
+        Random.state = currentState;
+    }
+
+    public const float hashGridScale = 0.25f;
+    public static HexHash SampleHashGrid(Vector3 position)
+    {
+        int x = (int)(position.x * hashGridScale) % hashGridSize;
+        if (x < 0)
+        {
+            x += hashGridSize;
+        }
+
+        int z = (int)(position.z * hashGridScale) % hashGridSize;
+        if (z < 0)
+        {
+            z += hashGridSize;
+        }
+        return hashGrid[x + z * hashGridSize];
+    }
+
+    static float[][] featureThresholds = {
+        new float[] {0.0f, 0.0f, 0.4f},     
+        new float[] {0.0f, 0.4f, 0.6f},    
+        new float[] {0.4f, 0.6f, 0.8f}   
+    };
+
+    public static float[] GetFeatureThresholds(int level)
+    {
+        return featureThresholds[level];
+    }
+
     static Vector3[] corners = {
 		new Vector3(0f, 0f, outerRadius),
 		new Vector3(innerRadius, 0f, 0.5f * outerRadius),

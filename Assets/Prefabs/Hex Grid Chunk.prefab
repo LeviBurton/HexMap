@@ -495,6 +495,7 @@ Transform:
   - {fileID: 7912572079660053267}
   - {fileID: 4367975505047829309}
   - {fileID: 4257482071823973538}
+  - {fileID: 4386982395728081535}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -516,6 +517,7 @@ MonoBehaviour:
   water: {fileID: 8737751424209677158}
   waterShore: {fileID: 2088775741240882000}
   estuaries: {fileID: 5974378395984661375}
+  features: {fileID: 295646479798551051}
 --- !u!1 &7817574308172176599
 GameObject:
   m_ObjectHideFlags: 0
@@ -706,3 +708,56 @@ MonoBehaviour:
   useColors: 0
   useUVCoordinates: 1
   useUV2Coordinates: 1
+--- !u!1 &8634523476032894698
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4386982395728081535}
+  - component: {fileID: 295646479798551051}
+  m_Layer: 0
+  m_Name: Features
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4386982395728081535
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8634523476032894698}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.05000015, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7939264984443770085}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &295646479798551051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8634523476032894698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1b750ddbf490cc4cae81bcbcc19aa30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  urbanCollections:
+  - prefabs:
+    - {fileID: 8800868650166189827, guid: 0e98cdd797362dd4f9278868648748cd, type: 3}
+    - {fileID: 8800868650166189827, guid: 5c334a8cc5752d344920b861376497c1, type: 3}
+  - prefabs:
+    - {fileID: 8800868650166189827, guid: b13cfdbeca75add46b08a39375b1c7ef, type: 3}
+    - {fileID: 8800868650166189827, guid: beb922424fef0e24d9ca560bcd227902, type: 3}
+  - prefabs:
+    - {fileID: 8800868650166189827, guid: b337f1d657c51694b88a6d09b3e3f49c, type: 3}
+    - {fileID: 8800868650166189827, guid: b941a19fe458c9c49b2885c64897c049, type: 3}
