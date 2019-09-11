@@ -2,6 +2,21 @@
 #ifndef WATERHLSLINCLUDE_INCLUDED
 #define WATERHLSLINCLUDE_INCLUDED
 
+float River(float2 riverUV, Texture2D noiseTex, SamplerState ss, float time)
+{
+	float2 uv = riverUV;
+	uv.x = uv.x * 0.0625 + time * 0.005;
+	uv.y -= time * 0.25;
+	float4 noise = SAMPLE_TEXTURE2D(noiseTex, ss, uv);
+
+	float2 uv2 = riverUV;
+	uv2.x = uv2.x * 0.0625 - time * 0.0052;
+	uv2.y -= time * 0.23;
+	float4 noise2 = SAMPLE_TEXTURE2D(noiseTex, ss, uv2);
+
+	return noise.x * noise2.w;
+}
+
 float Foam_float(float shore, float2 worldXZ, Texture2D noiseTex, SamplerState ss) {
 	//	float shore = IN.uv_MainTex.y;
 	shore = sqrt(shore) * 0.9;
