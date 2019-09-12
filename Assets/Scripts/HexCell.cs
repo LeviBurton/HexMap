@@ -2,7 +2,6 @@
 
 public class HexCell : MonoBehaviour
 {
-
     public HexCoordinates coordinates;
 
     public RectTransform uiRect;
@@ -10,6 +9,8 @@ public class HexCell : MonoBehaviour
     public HexGridChunk chunk;
 
     int urbanLevel, farmLevel, plantLevel;
+
+    bool walled;
 
     public Color Color
     {
@@ -128,6 +129,22 @@ public class HexCell : MonoBehaviour
             {
                 urbanLevel = value;
                 RefreshSelfOnly();
+            }
+        }
+    }
+
+    public bool Walled
+    {
+        get
+        {
+            return walled;
+        }
+        set
+        {
+            if (walled != value)
+            {
+                walled = value;
+                Refresh();
             }
         }
     }
