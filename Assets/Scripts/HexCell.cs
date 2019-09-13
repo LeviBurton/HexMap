@@ -10,6 +10,8 @@ public class HexCell : MonoBehaviour
 
     int urbanLevel, farmLevel, plantLevel;
 
+    int specialIndex;
+
     bool walled;
 
     public Color Color
@@ -26,6 +28,30 @@ public class HexCell : MonoBehaviour
             }
             color = value;
             Refresh();
+        }
+    }
+
+    public bool IsSpecial
+    {
+        get
+        {
+            return specialIndex > 0;
+        }
+    }
+
+    public int SpecialIndex
+    {
+        get
+        {
+            return specialIndex;
+        }
+        set
+        {
+            if (specialIndex != value)
+            {
+                specialIndex = value;
+                RefreshSelfOnly();
+            }
         }
     }
 

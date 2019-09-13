@@ -5,10 +5,10 @@ public class HexMapEditor : MonoBehaviour
 {
     public Color[] colors;
     public HexGrid hexGrid;
-    int activeElevation, activeWaterLevel, activeUrbanLevel, activeFarmLevel, activePlantLevel;
+    int activeElevation, activeWaterLevel, activeUrbanLevel, activeFarmLevel, activePlantLevel, activeSpecialIndex;
     Color activeColor;
     int brushSize;
-    bool applyColor, applyElevation, applyWaterLevel, applyUrbanLevel, applyFarmLevel, applyPlantLevel;
+    bool applyColor, applyElevation, applyWaterLevel, applyUrbanLevel, applyFarmLevel, applyPlantLevel, applySpecialIndex;
     bool isDrag;
     HexDirection dragDirection;
     HexCell previousCell;
@@ -19,6 +19,16 @@ public class HexMapEditor : MonoBehaviour
     }
 
     OptionalToggle riverMode, roadMode, walledMode;
+
+    public void SetApplySpecialIndex(bool toggle)
+    {
+        applySpecialIndex = toggle;
+    }
+
+    public void SetSpecialIndex(float index)
+    {
+        activeSpecialIndex = (int)index;
+    }
 
     public void SetWalledMode(int mode)
     {
@@ -208,6 +218,11 @@ public class HexMapEditor : MonoBehaviour
             if (applyWaterLevel)
             {
                 cell.WaterLevel = activeWaterLevel;
+            }
+
+            if (applySpecialIndex)
+            {
+                cell.SpecialIndex = activeSpecialIndex;
             }
 
             if (applyUrbanLevel)

@@ -879,3 +879,8 @@ MonoBehaviour:
   walls: {fileID: 8799529508056624585}
   wallTower: {fileID: 4336705869845155315, guid: 1bf7643db0dfe304782090fb1a059693,
     type: 3}
+  bridge: {fileID: 27200919799270451, guid: 93f6c5cfadd1bc34ca90fe08364a7808, type: 3}
+  special:
+  - {fileID: 2338196001001301953, guid: 78e1857494ed4124cbc548ca5b46b415, type: 3}
+  - {fileID: 4442570103706737158, guid: d19a49d02bbf2c642829f22e03e35fa3, type: 3}
+  - {fileID: 285551820827900366, guid: 148c003aa29e50b4399a79cd906b2aba, type: 3}

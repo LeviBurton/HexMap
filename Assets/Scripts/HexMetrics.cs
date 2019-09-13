@@ -10,8 +10,8 @@ public static class HexMetrics
     public const float wallTowerThreshold = 0.5f;
     public const float wallYOffset = -1f;
     public const float outerToInner = 0.866025404f;
-
-	public const float innerToOuter = 1f / outerToInner;
+    public const float bridgeDesignLength = 7f;
+    public const float innerToOuter = 1f / outerToInner;
 
 	public const float outerRadius = 10f;
 
