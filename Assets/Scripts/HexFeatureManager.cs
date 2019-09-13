@@ -6,6 +6,7 @@ public class HexFeatureManager : MonoBehaviour
 {
     public HexFeatureCollection[] urbanCollections, farmCollections, plantCollections;
     public HexMesh walls;
+    public Transform wallTower;
 
     Transform container;
 
@@ -67,7 +68,15 @@ public class HexFeatureManager : MonoBehaviour
         {
             if (hasRighWall)
             {
-                AddWallSegment(pivot, left, pivot, right);
+                bool hasTower = false;
+                if (leftCell.Elevation == rightCell.Elevation)
+                {
+                    HexHash hash = HexMetrics.SampleHashGrid(
+                       (pivot + left + right) * (1f / 3f)
+                   );
+                    hasTower = hash.e < HexMetrics.wallTowerThreshold;
+                }
+                AddWallSegment(pivot, left, pivot, right, hasTower);
             }
             else if (leftCell.Elevation < rightCell.Elevation)
             {
@@ -92,7 +101,8 @@ public class HexFeatureManager : MonoBehaviour
     }
 
     void AddWallSegment(
-        Vector3 nearLeft, Vector3 farLeft, Vector3 nearRight, Vector3 farRight
+        Vector3 nearLeft, Vector3 farLeft, Vector3 nearRight, Vector3 farRight,
+        bool addTower = false
     )
     {
         nearLeft = HexMetrics.Perturb(nearLeft);
@@ -126,6 +136,17 @@ public class HexFeatureManager : MonoBehaviour
         v4.y = rightTop;
         walls.AddQuadUnperturbed(v2, v1, v4, v3);
         walls.AddQuadUnperturbed(t1, t2, v3, v4);
+        if (addTower)
+        {
+            Transform towerInstance = Instantiate(wallTower);
+            towerInstance.transform.localPosition = (left + right) * 0.5f;
+
+            Vector3 rightDirection = right - left;
+            rightDirection.y = 0f;
+            towerInstance.transform.right = rightDirection;
+
+            towerInstance.SetParent(container, false);
+        }
     }
 
     public void AddWall(
@@ -267,7 +288,6 @@ public class HexFeatureManager : MonoBehaviour
     {
         if (level > 0)
         {
-            Debug.LogFormat($"PickPrefab: {level} {hash}");
 
             float[] thresholds = HexMetrics.GetFeatureThresholds(level - 1);
             for (int i = 0; i < thresholds.Length; i++)

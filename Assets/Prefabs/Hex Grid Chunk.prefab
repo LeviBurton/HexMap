@@ -877,3 +877,5 @@ MonoBehaviour:
     - {fileID: 8800868650166189827, guid: 1c89967a6e523854183856e589cfb2a2, type: 3}
     - {fileID: 8800868650166189827, guid: 0a6a88856adb54e45920bc6cb8ca1a97, type: 3}
   walls: {fileID: 8799529508056624585}
+  wallTower: {fileID: 4336705869845155315, guid: 1bf7643db0dfe304782090fb1a059693,
+    type: 3}
