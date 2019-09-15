@@ -45,6 +45,8 @@ public static class HexMetrics
 
     public const float waterFactor = 0.6f;
 
+    public static Color[] colors;
+
     public static Vector3 WallLerp(Vector3 near, Vector3 far)
     {
         near.x += (far.x - near.x) * 0.5f;

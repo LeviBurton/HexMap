@@ -1,35 +1,108 @@
-﻿using UnityEngine;
+﻿using System.IO;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class HexGrid : MonoBehaviour {
 
-	public int chunkCountX = 4, chunkCountZ = 3;
+    public int cellCountX = 20, cellCountZ = 15;
+
     public int seed;
-
-	public Color defaultColor = Color.white;
-
-	public HexCell cellPrefab;
+    public Color[] colors;
+    public HexCell cellPrefab;
 	public TMPro.TextMeshProUGUI cellLabelPrefab;
 	public HexGridChunk chunkPrefab;
 	public Texture2D noiseSource;
 
-	HexGridChunk[] chunks;
+    int chunkCountX, chunkCountZ;
+    HexGridChunk[] chunks;
 	HexCell[] cells;
 
-	int cellCountX, cellCountZ;
+    void OnEnable()
+    {
+        if (!HexMetrics.noiseSource)
+        {
+            HexMetrics.noiseSource = noiseSource;
+            HexMetrics.InitializeHashGrid(seed);
+            HexMetrics.colors = colors;
+        }
+    }
 
-	void Awake () {
+    void Awake () {
 		HexMetrics.noiseSource = noiseSource;
         HexMetrics.InitializeHashGrid(seed);
-
-		cellCountX = chunkCountX * HexMetrics.chunkSizeX;
-		cellCountZ = chunkCountZ * HexMetrics.chunkSizeZ;
-
-		CreateChunks();
-		CreateCells();
+        HexMetrics.colors = colors;
+        CreateMap(cellCountX, cellCountZ);
 	}
 
-	void CreateChunks () {
+    public bool CreateMap(int x, int z)
+    {
+        if (x <= 0 || x % HexMetrics.chunkSizeX != 0 ||
+            z <= 0 || z % HexMetrics.chunkSizeZ != 0)
+        {
+            Debug.LogError("Unsupported map size.");
+            return false;
+        }
+
+        if (chunks != null)
+        {
+            for (int i = 0; i < chunks.Length; i++)
+            {
+                Destroy(chunks[i].gameObject);
+            }
+        }
+
+        cellCountX = x;
+        cellCountZ = z;
+
+        chunkCountX = cellCountX / HexMetrics.chunkSizeX;
+        chunkCountZ = cellCountZ / HexMetrics.chunkSizeZ;
+
+        CreateChunks();
+        CreateCells();
+
+        return true;
+    }
+
+    public void Save(BinaryWriter writer)
+    {
+        writer.Write(cellCountX);
+        writer.Write(cellCountZ);
+
+        for (int i = 0; i < cells.Length; i++)
+        {
+            cells[i].Save(writer);
+        }
+    }
+
+    public void Load(BinaryReader reader, int header)
+    {
+        int x = 20, z = 15;
+
+        if (header >= 1)
+        {
+            x = reader.ReadInt32();
+            z = reader.ReadInt32();
+        }
+
+        if (x != cellCountX || z != cellCountZ)
+        {
+            if (!CreateMap(x, z))
+            {
+                return;
+            }
+        }
+
+        for (int i = 0; i < cells.Length; i++)
+        {
+            cells[i].Load(reader);
+        }
+        for (int i = 0; i < chunks.Length; i++)
+        {
+            chunks[i].Refresh();
+        }
+    }
+
+    void CreateChunks () {
 		chunks = new HexGridChunk[chunkCountX * chunkCountZ];
 
 		for (int z = 0, i = 0; z < chunkCountZ; z++) {
@@ -49,15 +122,6 @@ public class HexGrid : MonoBehaviour {
 			}
 		}
 	}
-
-    void OnEnable()
-    {
-        if (!HexMetrics.noiseSource)
-        {
-            HexMetrics.noiseSource = noiseSource;
-            HexMetrics.InitializeHashGrid(seed);
-        }
-    }
 
 	public HexCell GetCell (Vector3 position) {
 		position = transform.InverseTransformPoint(position);
@@ -105,7 +169,6 @@ public class HexGrid : MonoBehaviour {
 		HexCell cell = cells[i] = Instantiate<HexCell>(cellPrefab);
 		cell.transform.localPosition = position;
 		cell.coordinates = HexCoordinates.FromOffsetCoordinates(x, z);
-		cell.Color = defaultColor;
 
 		if (x > 0) {
 			cell.SetNeighbor(HexDirection.W, cells[i - 1]);

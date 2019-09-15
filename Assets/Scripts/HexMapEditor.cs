@@ -1,11 +1,14 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
+using System.IO;
 
 public class HexMapEditor : MonoBehaviour
 {
     public Color[] colors;
     public HexGrid hexGrid;
     int activeElevation, activeWaterLevel, activeUrbanLevel, activeFarmLevel, activePlantLevel, activeSpecialIndex;
+    int activeTerrainTypeIndex;
+
     Color activeColor;
     int brushSize;
     bool applyColor, applyElevation, applyWaterLevel, applyUrbanLevel, applyFarmLevel, applyPlantLevel, applySpecialIndex;
@@ -19,6 +22,13 @@ public class HexMapEditor : MonoBehaviour
     }
 
     OptionalToggle riverMode, roadMode, walledMode;
+
+
+
+    public void SetTerrainTypeIndex(int index)
+    {
+        activeTerrainTypeIndex = index;
+    }
 
     public void SetApplySpecialIndex(bool toggle)
     {
@@ -84,15 +94,6 @@ public class HexMapEditor : MonoBehaviour
         roadMode = (OptionalToggle)mode;
     }
 
-    public void SelectColor(int index)
-    {
-        applyColor = index >= 0;
-        if (applyColor)
-        {
-            activeColor = colors[index];
-        }
-    }
-
     public void SetApplyElevation(bool toggle)
     {
         applyElevation = toggle;
@@ -120,7 +121,6 @@ public class HexMapEditor : MonoBehaviour
 
     void Awake()
     {
-        SelectColor(-1);
         SetRoadMode(0);
         SetRiverMode(0);
         SetElevation(0);
@@ -205,9 +205,9 @@ public class HexMapEditor : MonoBehaviour
     {
         if (cell)
         {
-            if (applyColor)
+            if (activeTerrainTypeIndex >= 0)
             {
-                cell.Color = activeColor;
+                cell.TerrainTypeIndex = activeTerrainTypeIndex;
             }
 
             if (applyElevation)
