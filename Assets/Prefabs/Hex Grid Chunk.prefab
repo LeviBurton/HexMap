@@ -175,6 +175,7 @@ MonoBehaviour:
   useColors: 1
   useUVCoordinates: 0
   useUV2Coordinates: 0
+  useTerrainTypes: 1
 --- !u!1 &3311281129782837322
 GameObject:
   m_ObjectHideFlags: 0
@@ -270,6 +271,7 @@ MonoBehaviour:
   useColors: 0
   useUVCoordinates: 1
   useUV2Coordinates: 0
+  useTerrainTypes: 0
 --- !u!1 &4323728162319341051
 GameObject:
   m_ObjectHideFlags: 0
@@ -365,6 +367,7 @@ MonoBehaviour:
   useColors: 0
   useUVCoordinates: 1
   useUV2Coordinates: 0
+  useTerrainTypes: 0
 --- !u!1 &5327648776351490372
 GameObject:
   m_ObjectHideFlags: 0
@@ -460,6 +463,7 @@ MonoBehaviour:
   useColors: 0
   useUVCoordinates: 0
   useUV2Coordinates: 0
+  useTerrainTypes: 0
 --- !u!1 &6706600752027782869
 GameObject:
   m_ObjectHideFlags: 0
@@ -555,6 +559,7 @@ MonoBehaviour:
   useColors: 0
   useUVCoordinates: 0
   useUV2Coordinates: 0
+  useTerrainTypes: 0
 --- !u!1 &7186599646734865406
 GameObject:
   m_ObjectHideFlags: 0
@@ -709,6 +714,7 @@ MonoBehaviour:
   useColors: 1
   useUVCoordinates: 1
   useUV2Coordinates: 0
+  useTerrainTypes: 0
 --- !u!1 &8610580360203604838
 GameObject:
   m_ObjectHideFlags: 0
@@ -804,6 +810,7 @@ MonoBehaviour:
   useColors: 0
   useUVCoordinates: 1
   useUV2Coordinates: 1
+  useTerrainTypes: 0
 --- !u!1 &8634523476032894698
 GameObject:
   m_ObjectHideFlags: 0
@@ -844,43 +851,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 8634523476032894698}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1b750ddbf490cc4cae81bcbcc19aa30, type: 3}
+  m_Script: {fileID: 11500000, guid: 7980a4cbe74644514bcd19be773f45c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  urbanCollections:
-  - prefabs:
-    - {fileID: 8800868650166189827, guid: 0e98cdd797362dd4f9278868648748cd, type: 3}
-    - {fileID: 8800868650166189827, guid: 5c334a8cc5752d344920b861376497c1, type: 3}
-  - prefabs:
-    - {fileID: 8800868650166189827, guid: b13cfdbeca75add46b08a39375b1c7ef, type: 3}
-    - {fileID: 8800868650166189827, guid: beb922424fef0e24d9ca560bcd227902, type: 3}
-  - prefabs:
-    - {fileID: 8800868650166189827, guid: b337f1d657c51694b88a6d09b3e3f49c, type: 3}
-    - {fileID: 8800868650166189827, guid: b941a19fe458c9c49b2885c64897c049, type: 3}
-  farmCollections:
-  - prefabs:
-    - {fileID: 8800868650166189827, guid: 0b9f0542367628c459e009de618a31ac, type: 3}
-    - {fileID: 8800868650166189827, guid: 30dd45713b0e571448e596a275bc897f, type: 3}
-  - prefabs:
-    - {fileID: 8800868650166189827, guid: c5dab98d8ad553943b8fe72638f000db, type: 3}
-    - {fileID: 8800868650166189827, guid: a4c4ab5b410929d42a7373ac5f1d561f, type: 3}
-  - prefabs:
-    - {fileID: 8800868650166189827, guid: 263ff70db70ad384bb16925d7d17e853, type: 3}
-  plantCollections:
-  - prefabs:
-    - {fileID: 8800868650166189827, guid: 3ac267ed0665171438b1e567d784f78f, type: 3}
-    - {fileID: 8800868650166189827, guid: f0f9964864da78b4eb25f53d0ab77c01, type: 3}
-  - prefabs:
-    - {fileID: 8800868650166189827, guid: a0b13b9901fab4740b90122fbb0dd709, type: 3}
-    - {fileID: 8800868650166189827, guid: 1d39a7bca642a4c478e2796cf40754b5, type: 3}
-  - prefabs:
-    - {fileID: 8800868650166189827, guid: 1c89967a6e523854183856e589cfb2a2, type: 3}
-    - {fileID: 8800868650166189827, guid: 0a6a88856adb54e45920bc6cb8ca1a97, type: 3}
+  urbanCollections: []
+  farmCollections: []
+  plantCollections: []
   walls: {fileID: 8799529508056624585}
   wallTower: {fileID: 4336705869845155315, guid: 1bf7643db0dfe304782090fb1a059693,
     type: 3}
   bridge: {fileID: 27200919799270451, guid: 93f6c5cfadd1bc34ca90fe08364a7808, type: 3}
-  special:
-  - {fileID: 2338196001001301953, guid: 78e1857494ed4124cbc548ca5b46b415, type: 3}
-  - {fileID: 4442570103706737158, guid: d19a49d02bbf2c642829f22e03e35fa3, type: 3}
-  - {fileID: 285551820827900366, guid: 148c003aa29e50b4399a79cd906b2aba, type: 3}
+  special: []
