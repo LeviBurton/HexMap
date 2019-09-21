@@ -47,6 +47,7 @@ public class HexMapEditor : MonoBehaviour {
     public void SetEditMode(bool toggle)
     {
         editMode = toggle;
+        hexGrid.ShowUI(!toggle);
     }
 
     public void SetTerrainTypeIndex (int index) {
@@ -117,10 +118,6 @@ public class HexMapEditor : MonoBehaviour {
 		walledMode = (OptionalToggle)mode;
 	}
 
-	public void ShowUI (bool visible) {
-		hexGrid.ShowUI(visible);
-	}
-
 	void Update () {
 		if (
 			Input.GetMouseButton(0) &&
@@ -147,6 +144,10 @@ public class HexMapEditor : MonoBehaviour {
             if (editMode)
             {
                 EditCells(currentCell);
+            }
+            else
+            {
+                hexGrid.FindDistancesTo(currentCell);
             }
 
 			previousCell = currentCell;

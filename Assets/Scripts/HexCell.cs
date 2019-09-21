@@ -1,15 +1,30 @@
 ﻿using UnityEngine;
 using System.IO;
+using TMPro;
 
 public class HexCell : MonoBehaviour {
 
 	public HexCoordinates coordinates;
-
 	public RectTransform uiRect;
-
 	public HexGridChunk chunk;
 
-	public int Elevation {
+    int distance;
+    int terrainTypeIndex;
+    int elevation = int.MinValue;
+    int waterLevel;
+    int urbanLevel, farmLevel, plantLevel;
+    int specialIndex;
+    bool walled;
+    bool hasIncomingRiver, hasOutgoingRiver;
+    HexDirection incomingRiver, outgoingRiver;
+
+    [SerializeField]
+    HexCell[] neighbors;
+
+    [SerializeField]
+    bool[] roads;
+
+    public int Elevation {
 		get {
 			return elevation;
 		}
@@ -214,27 +229,26 @@ public class HexCell : MonoBehaviour {
 		}
 	}
 
-	int terrainTypeIndex;
+    public int Distance
+    {
+        get
+        {
+            return distance;
+        }
+        set
+        {
+            distance = value;
+            UpdateDistanceLabel();
+        }
+    }
 
-	int elevation = int.MinValue;
-	int waterLevel;
+    void UpdateDistanceLabel()
+    {
+        TextMeshProUGUI label = uiRect.GetComponent<TextMeshProUGUI>();
+        label.text = distance == int.MaxValue ? "" : distance.ToString();
+    }
 
-	int urbanLevel, farmLevel, plantLevel;
-
-	int specialIndex;
-
-	bool walled;
-
-	bool hasIncomingRiver, hasOutgoingRiver;
-	HexDirection incomingRiver, outgoingRiver;
-
-	[SerializeField]
-	HexCell[] neighbors;
-
-	[SerializeField]
-	bool[] roads;
-
-	public HexCell GetNeighbor (HexDirection direction) {
+    public HexCell GetNeighbor (HexDirection direction) {
 		return neighbors[(int)direction];
 	}
 
