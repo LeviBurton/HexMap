@@ -5,8 +5,9 @@ using System.IO;
 public class HexMapEditor : MonoBehaviour {
 
 	public HexGrid hexGrid;
+    public Material terrainMaterial;
 
-	int activeElevation;
+    int activeElevation;
 	int activeWaterLevel;
 
 	int activeUrbanLevel, activeFarmLevel, activePlantLevel, activeSpecialIndex;
@@ -15,9 +16,9 @@ public class HexMapEditor : MonoBehaviour {
 
 	int brushSize;
 
-	bool applyElevation = true;
+    bool editMode;
+    bool applyElevation = true;
 	bool applyWaterLevel = true;
-
 	bool applyUrbanLevel, applyFarmLevel, applyPlantLevel, applySpecialIndex;
 
 	enum OptionalToggle {
@@ -30,7 +31,25 @@ public class HexMapEditor : MonoBehaviour {
 	HexDirection dragDirection;
 	HexCell previousCell;
 
-	public void SetTerrainTypeIndex (int index) {
+    public void ShowGrid(bool visible)
+    {
+        if (visible)
+        {
+            // This is how we set a blackboard property.  The blackboard property must NOT be exposed for this to work!
+            Shader.SetGlobalFloat("_GridOn", 1.0f);
+        }
+        else
+        {
+            Shader.SetGlobalFloat("_GridOn", 0f);
+        }
+    }
+
+    public void SetEditMode(bool toggle)
+    {
+        editMode = toggle;
+    }
+
+    public void SetTerrainTypeIndex (int index) {
 		activeTerrainTypeIndex = index;
 	}
 
@@ -125,7 +144,11 @@ public class HexMapEditor : MonoBehaviour {
 			else {
 				isDrag = false;
 			}
-			EditCells(currentCell);
+            if (editMode)
+            {
+                EditCells(currentCell);
+            }
+
 			previousCell = currentCell;
 		}
 		else {
