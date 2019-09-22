@@ -50,6 +50,22 @@ public class HexGrid : MonoBehaviour
         }
     }
 
+    public List<HexCell> GetPath()
+    {
+        if (!currentPathExists)
+        {
+            return null;
+        }
+        List<HexCell> path = ListPool<HexCell>.Get();
+        for (HexCell c = currentPathTo; c != currentPathFrom; c = c.PathFrom)
+        {
+            path.Add(c);
+        }
+        path.Add(currentPathFrom);
+        path.Reverse();
+        return path;
+    }
+
     public HexCell GetCell(Ray ray)
     {
         RaycastHit hit;
@@ -212,7 +228,7 @@ public class HexGrid : MonoBehaviour
                 return true;
             }
 
-            int currentTurn = current.Distance / speed;
+            int currentTurn = (current.Distance - 1) / speed;
 
             // add its neighbors
             for (HexDirection d = HexDirection.NE; d <= HexDirection.NW; d++)
@@ -258,7 +274,7 @@ public class HexGrid : MonoBehaviour
                 }
 
                 int distance = current.Distance + moveCost;
-                int turn = distance / speed;
+                int turn = (distance - 1) / speed;
 
                 if (turn > currentTurn)
                 {
