@@ -12,6 +12,7 @@ public class HexCell : MonoBehaviour {
     public HexCell PathFrom { get; set; }
     public HexCell NextWithSamePriority { get; set; }
     public int SearchPhase { get; set; }
+    public HexUnit Unit { get; set; }
 
     int distance;
     int terrainTypeIndex;
@@ -137,7 +138,6 @@ public class HexCell : MonoBehaviour {
 			return transform.localPosition;
 		}
 	}
-
 
 	public float StreamBedY {
 		get {
@@ -423,20 +423,34 @@ public class HexCell : MonoBehaviour {
 		uiRect.localPosition = uiPosition;
 	}
 
-	void Refresh () {
-		if (chunk) {
+	void Refresh ()
+    {
+		if (chunk)
+        {
 			chunk.Refresh();
-			for (int i = 0; i < neighbors.Length; i++) {
+			for (int i = 0; i < neighbors.Length; i++)
+            {
 				HexCell neighbor = neighbors[i];
-				if (neighbor != null && neighbor.chunk != chunk) {
+				if (neighbor != null && neighbor.chunk != chunk)
+                {
 					neighbor.chunk.Refresh();
 				}
 			}
+
+            if (Unit)
+            {
+                Unit.ValidateLocation();
+            }
 		}
 	}
 
 	void RefreshSelfOnly () {
 		chunk.Refresh();
+
+        if (Unit)
+        {
+            Unit.ValidateLocation();
+        }
 	}
 
 	public void Save (BinaryWriter writer) {

@@ -2,40 +2,51 @@
 using UnityEngine.EventSystems;
 using System.IO;
 
-public class HexMapEditor : MonoBehaviour {
+public class HexMapEditor : MonoBehaviour
+{
+    enum OptionalToggle
+    {
+        Ignore, Yes, No
+    }
 
-	public HexGrid hexGrid;
+    public HexGrid hexGrid;
     public Material terrainMaterial;
+
+    HexDirection dragDirection;
+    HexCell previousCell;
+    OptionalToggle riverMode, roadMode, walledMode;
+
+    int brushSize;
 
     int activeElevation;
 	int activeWaterLevel;
-
-	int activeUrbanLevel, activeFarmLevel, activePlantLevel, activeSpecialIndex;
-
+    int activeUrbanLevel;
+    int activeFarmLevel;
+    int activePlantLevel;
+    int activeSpecialIndex;
 	int activeTerrainTypeIndex;
 
-	int brushSize;
-
     bool editMode;
-    bool applyElevation = true;
-	bool applyWaterLevel = true;
-	bool applyUrbanLevel, applyFarmLevel, applyPlantLevel, applySpecialIndex;
+    bool isDrag;
+    bool applyElevation;
+    bool applyWaterLevel;
+    bool applyUrbanLevel;
+    bool applyFarmLevel;
+    bool applyPlantLevel;
+    bool applySpecialIndex;
 
-	enum OptionalToggle {
-		Ignore, Yes, No
-	}
-
-	OptionalToggle riverMode, roadMode, walledMode;
-
-	bool isDrag;
-	HexDirection dragDirection;
-    HexCell previousCell, searchFromCell, searchToCell;
+    void Awake()
+    {
+        Shader.SetGlobalFloat("_GridOn", 0f);
+        SetEditMode(false);
+    }
 
     public void ShowGrid(bool visible)
     {
         if (visible)
         {
             // This is how we set a blackboard property.  The blackboard property must NOT be exposed for this to work!
+            // hackish.  I pass a float because I don't know how to pass a bool -- the receiving end only takes "vector1".
             Shader.SetGlobalFloat("_GridOn", 1.0f);
         }
         else
@@ -46,8 +57,7 @@ public class HexMapEditor : MonoBehaviour {
 
     public void SetEditMode(bool toggle)
     {
-        editMode = toggle;
-        hexGrid.ShowUI(!toggle);
+        enabled = toggle;
     }
 
     public void SetTerrainTypeIndex (int index) {
@@ -118,24 +128,39 @@ public class HexMapEditor : MonoBehaviour {
 		walledMode = (OptionalToggle)mode;
 	}
 
-	void Update () {
-		if (
-			Input.GetMouseButton(0) &&
-			!EventSystem.current.IsPointerOverGameObject()
-		) {
-			HandleInput();
-		}
-		else {
-			previousCell = null;
-		}
-	}
+	void Update ()
+    {
+        if (!EventSystem.current.IsPointerOverGameObject())
+        {
+            if (Input.GetMouseButton(0))
+            {
+                HandleInput();
+                return;
+            }
 
-	void HandleInput () {
-		Ray inputRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-		RaycastHit hit;
-		if (Physics.Raycast(inputRay, out hit)) {
-			HexCell currentCell = hexGrid.GetCell(hit.point);
+            if (Input.GetKeyDown(KeyCode.U))
+            {
+                if (Input.GetKey(KeyCode.LeftShift))
+                {
+                    DestroyUnit();
+                }
+                else
+                {
+                    CreateUnit();
+                }
+                return;
+            }
+        }
 
+        previousCell = null;
+    }
+
+	void HandleInput ()
+    {
+        HexCell currentCell = GetCellUnderCursor();
+
+        if (currentCell)
+        {
 			if (previousCell && previousCell != currentCell)
             {
 				ValidateDrag(currentCell);
@@ -145,35 +170,8 @@ public class HexMapEditor : MonoBehaviour {
 				isDrag = false;
 			}
 
-            if (editMode)
-            {
-                EditCells(currentCell);
-            }
-            else if (Input.GetKey(KeyCode.LeftShift) && searchToCell != currentCell)
-            {
-                if (searchFromCell != currentCell)
-                {
-                    if (searchFromCell)
-                    {
-                        searchFromCell.DisableHighlight();
-                    }
-                    searchFromCell = currentCell;
-                    searchFromCell.EnableHighlight(Color.blue);
-                    if (searchToCell)
-                    {
-                        hexGrid.FindPath(searchFromCell, searchToCell, 24);
-                    }
-                }
-            }
-            else if (searchFromCell && searchFromCell != currentCell)
-            {
-                if (searchToCell != currentCell)
-                {
-                    searchToCell = currentCell;
-                    hexGrid.FindPath(searchFromCell, searchToCell, 24);
-                }
-            }
-
+            EditCells(currentCell);
+  
             previousCell = currentCell;
 		}
 		else
@@ -182,7 +180,32 @@ public class HexMapEditor : MonoBehaviour {
 		}
 	}
 
-	void ValidateDrag (HexCell currentCell) {
+    void CreateUnit()
+    {
+        HexCell cell = GetCellUnderCursor();
+
+        if (cell && !cell.Unit)
+        {
+            hexGrid.AddUnit(Instantiate(HexUnit.unitPrefab), cell, Random.Range(0f, 360f));
+        }
+    }
+
+    void DestroyUnit()
+    {
+        HexCell cell = GetCellUnderCursor();
+        if (cell && cell.Unit)
+        {
+            hexGrid.RemoveUnit(cell.Unit);
+        }
+    }
+
+    HexCell GetCellUnderCursor()
+    {
+        return
+              hexGrid.GetCell(Camera.main.ScreenPointToRay(Input.mousePosition));
+    }
+
+    void ValidateDrag (HexCell currentCell) {
 		for (
 			dragDirection = HexDirection.NE;
 			dragDirection <= HexDirection.NW;
