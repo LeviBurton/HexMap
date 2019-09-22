@@ -29,7 +29,7 @@ public class HexMapEditor : MonoBehaviour {
 
 	bool isDrag;
 	HexDirection dragDirection;
-	HexCell previousCell;
+    HexCell previousCell, searchFromCell, searchToCell;
 
     public void ShowGrid(bool visible)
     {
@@ -135,24 +135,49 @@ public class HexMapEditor : MonoBehaviour {
 		RaycastHit hit;
 		if (Physics.Raycast(inputRay, out hit)) {
 			HexCell currentCell = hexGrid.GetCell(hit.point);
-			if (previousCell && previousCell != currentCell) {
+
+			if (previousCell && previousCell != currentCell)
+            {
 				ValidateDrag(currentCell);
 			}
-			else {
+			else
+            {
 				isDrag = false;
 			}
+
             if (editMode)
             {
                 EditCells(currentCell);
             }
-            else
+            else if (Input.GetKey(KeyCode.LeftShift) && searchToCell != currentCell)
             {
-                hexGrid.FindDistancesTo(currentCell);
+                if (searchFromCell != currentCell)
+                {
+                    if (searchFromCell)
+                    {
+                        searchFromCell.DisableHighlight();
+                    }
+                    searchFromCell = currentCell;
+                    searchFromCell.EnableHighlight(Color.blue);
+                    if (searchToCell)
+                    {
+                        hexGrid.FindPath(searchFromCell, searchToCell, 24);
+                    }
+                }
+            }
+            else if (searchFromCell && searchFromCell != currentCell)
+            {
+                if (searchToCell != currentCell)
+                {
+                    searchToCell = currentCell;
+                    hexGrid.FindPath(searchFromCell, searchToCell, 24);
+                }
             }
 
-			previousCell = currentCell;
+            previousCell = currentCell;
 		}
-		else {
+		else
+        {
 			previousCell = null;
 		}
 	}

@@ -1,12 +1,17 @@
 ﻿using UnityEngine;
 using System.IO;
 using TMPro;
+using UnityEngine.UI;
 
 public class HexCell : MonoBehaviour {
 
 	public HexCoordinates coordinates;
 	public RectTransform uiRect;
 	public HexGridChunk chunk;
+    public int SearchHeuristic { get; set; }
+    public HexCell PathFrom { get; set; }
+    public HexCell NextWithSamePriority { get; set; }
+    public int SearchPhase { get; set; }
 
     int distance;
     int terrainTypeIndex;
@@ -23,6 +28,14 @@ public class HexCell : MonoBehaviour {
 
     [SerializeField]
     bool[] roads;
+
+    public int SearchPriority
+    {
+        get
+        {
+            return distance + SearchHeuristic;
+        }
+    }
 
     public int Elevation {
 		get {
@@ -238,14 +251,26 @@ public class HexCell : MonoBehaviour {
         set
         {
             distance = value;
-            UpdateDistanceLabel();
         }
     }
 
-    void UpdateDistanceLabel()
+    public void DisableHighlight()
+    {
+        Image highlight = uiRect.GetChild(0).GetComponent<Image>();
+        highlight.enabled = false;
+    }
+
+    public void EnableHighlight(Color color)
+    {
+        Image highlight = uiRect.GetChild(0).GetComponent<Image>();
+        highlight.color = color;
+        highlight.enabled = true;
+    }
+
+    public void SetLabel(string text)
     {
         TextMeshProUGUI label = uiRect.GetComponent<TextMeshProUGUI>();
-        label.text = distance == int.MaxValue ? "" : distance.ToString();
+        label.text = text;
     }
 
     public HexCell GetNeighbor (HexDirection direction) {
