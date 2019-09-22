@@ -8,12 +8,7 @@ public class HexCell : MonoBehaviour {
 	public HexCoordinates coordinates;
 	public RectTransform uiRect;
 	public HexGridChunk chunk;
-    public int SearchHeuristic { get; set; }
-    public HexCell PathFrom { get; set; }
-    public HexCell NextWithSamePriority { get; set; }
-    public int SearchPhase { get; set; }
-    public HexUnit Unit { get; set; }
-
+   
     int distance;
     int terrainTypeIndex;
     int elevation = int.MinValue;
@@ -29,6 +24,15 @@ public class HexCell : MonoBehaviour {
 
     [SerializeField]
     bool[] roads;
+
+    public int SearchHeuristic { get; set; }
+    public HexCell PathFrom { get; set; }
+    public HexCell NextWithSamePriority { get; set; }
+    public int SearchPhase { get; set; }
+    public HexUnit Unit { get; set; }
+    public HexCellShaderData ShaderData { get; set; }
+
+    public int Index { get; set; }
 
     public int SearchPriority
     {
@@ -237,8 +241,8 @@ public class HexCell : MonoBehaviour {
 		set {
 			if (terrainTypeIndex != value) {
 				terrainTypeIndex = value;
-				Refresh();
-			}
+                ShaderData.RefreshTerrain(this);
+            }
 		}
 	}
 
@@ -488,7 +492,8 @@ public class HexCell : MonoBehaviour {
 
 	public void Load (BinaryReader reader) {
 		terrainTypeIndex = reader.ReadByte();
-		elevation = reader.ReadByte();
+        ShaderData.RefreshTerrain(this);
+        elevation = reader.ReadByte();
 		RefreshPosition();
 		waterLevel = reader.ReadByte();
 		urbanLevel = reader.ReadByte();

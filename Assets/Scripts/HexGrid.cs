@@ -15,6 +15,7 @@ public class HexGrid : MonoBehaviour
 	public Texture2D noiseSource;
 	public int seed;
 
+    HexCellShaderData cellShaderData;
     HexCellPriorityQueue searchFrontier;
     HexGridChunk[] chunks;
 	HexCell[] cells;
@@ -25,18 +26,11 @@ public class HexGrid : MonoBehaviour
     int chunkCountX, chunkCountZ;
     int searchFrontierPhase;
 
-    public bool HasPath
-    {
-        get
-        {
-            return currentPathExists;
-        }
-    }
-
     void Awake () {
 		HexMetrics.noiseSource = noiseSource;
 		HexMetrics.InitializeHashGrid(seed);
         HexUnit.unitPrefab = unitPrefab;
+        cellShaderData = gameObject.AddComponent<HexCellShaderData>();
         CreateMap(cellCountX, cellCountZ);
 	}
 
@@ -47,6 +41,14 @@ public class HexGrid : MonoBehaviour
             HexMetrics.noiseSource = noiseSource;
             HexMetrics.InitializeHashGrid(seed);
             HexUnit.unitPrefab = unitPrefab;
+        }
+    }
+
+    public bool HasPath
+    {
+        get
+        {
+            return currentPathExists;
         }
     }
 
@@ -122,7 +124,8 @@ public class HexGrid : MonoBehaviour
 		cellCountZ = z;
 		chunkCountX = cellCountX / HexMetrics.chunkSizeX;
 		chunkCountZ = cellCountZ / HexMetrics.chunkSizeZ;
-		CreateChunks();
+        cellShaderData.Initialize(cellCountX, cellCountZ);
+        CreateChunks();
 		CreateCells();
 		return true;
 	}
@@ -338,8 +341,10 @@ public class HexGrid : MonoBehaviour
 		HexCell cell = cells[i] = Instantiate<HexCell>(cellPrefab);
 		cell.transform.localPosition = position;
 		cell.coordinates = HexCoordinates.FromOffsetCoordinates(x, z);
+        cell.Index = i;
+        cell.ShaderData = cellShaderData;
 
-		if (x > 0) {
+        if (x > 0) {
 			cell.SetNeighbor(HexDirection.W, cells[i - 1]);
 		}
 		if (z > 0) {
