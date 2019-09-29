@@ -9656,8 +9656,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 414a0fc06528949a0baff4f719b04a4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitPrefab: {fileID: 7177334613813809704, guid: 2207a310b249d4540926348b8093b6d9,
-    type: 3}
   cellCountX: 20
   cellCountZ: 15
   cellPrefab: {fileID: 4955963190288217934, guid: 9b02d4461ad634043838667d05492913,
@@ -9665,6 +9663,8 @@ MonoBehaviour:
   cellLabelPrefab: {fileID: 4198025654376038145, guid: 358aaf41d105507499aa5b7915a7df11,
     type: 3}
   chunkPrefab: {fileID: 5405047154794636541, guid: 7df4d3be96642d843bf490dbb8efacb4,
+    type: 3}
+  unitPrefab: {fileID: 7177334613813809704, guid: 2207a310b249d4540926348b8093b6d9,
     type: 3}
   noiseSource: {fileID: 2800000, guid: 38701cdeb1fb9427cbb585f917aa59cb, type: 3}
   seed: 1234
@@ -14123,7 +14123,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, Unity.ugui, Version=1.0.0.0, Culture=neutral,
       PublicKeyToken=null
-  m_IsOn: 0
+  m_IsOn: 1
 --- !u!1 &1528185375
 GameObject:
   m_ObjectHideFlags: 0
@@ -19488,7 +19488,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, Unity.ugui, Version=1.0.0.0, Culture=neutral,
       PublicKeyToken=null
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!114 &2024852927
 MonoBehaviour:
   m_ObjectHideFlags: 0

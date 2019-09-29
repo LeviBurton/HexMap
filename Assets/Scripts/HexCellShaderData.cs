@@ -1,18 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class HexCellShaderData : MonoBehaviour
 {
+
     Texture2D cellTexture;
     Color32[] cellTextureData;
-
-    void LateUpdate()
-    {
-        cellTexture.SetPixels32(cellTextureData);
-        cellTexture.Apply();
-        enabled = false;
-    }
 
     public void Initialize(int x, int z)
     {
@@ -27,7 +19,13 @@ public class HexCellShaderData : MonoBehaviour
             );
             cellTexture.filterMode = FilterMode.Point;
             cellTexture.wrapMode = TextureWrapMode.Clamp;
+            Shader.SetGlobalTexture("_HexCellData", cellTexture);
         }
+
+        Shader.SetGlobalVector(
+            "_HexCellData_TexelSize",
+            new Vector4(1f / x, 1f / z, x, z)
+        );
 
         if (cellTextureData == null || cellTextureData.Length != x * z)
         {
@@ -40,7 +38,6 @@ public class HexCellShaderData : MonoBehaviour
                 cellTextureData[i] = new Color32(0, 0, 0, 0);
             }
         }
-
         enabled = true;
     }
 
@@ -48,5 +45,12 @@ public class HexCellShaderData : MonoBehaviour
     {
         cellTextureData[cell.Index].a = (byte)cell.TerrainTypeIndex;
         enabled = true;
+    }
+
+    void LateUpdate()
+    {
+        cellTexture.SetPixels32(cellTextureData);
+        cellTexture.Apply();
+        enabled = false;
     }
 }
