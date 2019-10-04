@@ -9,10 +9,10 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{E32C7693-64CB-6932-E3F0-4CC6E9D6C552}</ProjectGuid>
+    <ProjectGuid>{95CDF119-A09A-CCD3-3B3F-B7336FBFA7BB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <AssemblyName>Unity.RenderPipelines.Lightweight.Editor</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
@@ -22,11 +22,11 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Temp\bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;UNITY_2019_3_0;UNITY_2019_3;UNITY_2019;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_INCLUDE_TESTS;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;INCLUDE_DYNAMIC_GI;ENABLE_MONO_BDWGC;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_VIDEO;PLATFORM_STANDALONE_WIN;PLATFORM_STANDALONE;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_OUT_OF_PROCESS_CRASH_HANDLER;ENABLE_EVENT_QUEUE;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;ENABLE_VR;ENABLE_AR;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_STANDARD_2_0;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;UNITY_POST_PROCESSING_STACK_V2;ODIN_INSPECTOR;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;UNITY_2019_3_0;UNITY_2019_3;UNITY_2019;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_INCLUDE_TESTS;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;INCLUDE_DYNAMIC_GI;ENABLE_MONO_BDWGC;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_VIDEO;PLATFORM_STANDALONE_WIN;PLATFORM_STANDALONE;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_OUT_OF_PROCESS_CRASH_HANDLER;ENABLE_EVENT_QUEUE;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;ENABLE_VR;ENABLE_AR;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_STANDARD_2_0;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;UNITY_POST_PROCESSING_STACK_V2;ODIN_INSPECTOR;NET_4_6;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
-    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -35,7 +35,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
-    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup>
     <NoConfig>true</NoConfig>
@@ -47,7 +47,7 @@
   <PropertyGroup>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <UnityProjectGenerator>Unity/VSTU</UnityProjectGenerator>
-    <UnityProjectType>Game:1</UnityProjectType>
+    <UnityProjectType>Editor:5</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>2019.3.0a5</UnityVersion>
   </PropertyGroup>
@@ -60,170 +60,126 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Bezier.cs" />
-    <Compile Include="Assets\Scripts\EdgeVertices.cs" />
-    <Compile Include="Assets\Scripts\HexCell.cs" />
-    <Compile Include="Assets\Scripts\HexCellPriorityQueue.cs" />
-    <Compile Include="Assets\Scripts\HexCellShaderData.cs" />
-    <Compile Include="Assets\Scripts\HexCoordinates.cs" />
-    <Compile Include="Assets\Scripts\HexDirection.cs" />
-    <Compile Include="Assets\Scripts\HexEdgeType.cs" />
-    <Compile Include="Assets\Scripts\HexFeatureCollection.cs" />
-    <Compile Include="Assets\Scripts\HexFeatureManager.cs" />
-    <Compile Include="Assets\Scripts\HexGameUI.cs" />
-    <Compile Include="Assets\Scripts\HexGrid.cs" />
-    <Compile Include="Assets\Scripts\HexGridChunk.cs" />
-    <Compile Include="Assets\Scripts\HexHash.cs" />
-    <Compile Include="Assets\Scripts\HexMapCamera.cs" />
-    <Compile Include="Assets\Scripts\HexMapEditor.cs" />
-    <Compile Include="Assets\Scripts\HexMesh.cs" />
-    <Compile Include="Assets\Scripts\HexMetrics.cs" />
-    <Compile Include="Assets\Scripts\HexUnit.cs" />
-    <Compile Include="Assets\Scripts\ListPool.cs" />
-    <Compile Include="Assets\Scripts\NewMapMenu.cs" />
-    <Compile Include="Assets\Scripts\SaveLoadItem.cs" />
-    <Compile Include="Assets\Scripts\SaveLoadMenu.cs" />
-    <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
-    <Compile Include="Assets\TextureArrayInspector\Extensions\Assets.cs" />
-    <Compile Include="Assets\TextureArrayInspector\Extensions\Coordinates.cs" />
-    <Compile Include="Assets\TextureArrayInspector\Extensions\Extensions.cs" />
-    <Compile Include="Assets\TextureArrayInspector\Extensions\Reflection.cs" />
-    <Compile Include="Assets\TextureArrayInspector\Extensions\Texture2DExtensions.cs" />
-    <Compile Include="Assets\TextureArrayInspector\Extensions\TextureArrayExtensions.cs" />
-    <Compile Include="Assets\TextureArrayInspector\Layout\Layout.cs" />
-    <Compile Include="Assets\TextureArrayInspector\Main\TextureArrayDecorator.cs" />
-    <Compile Include="Assets\TextureArrayInspector\Scripts\ArrayTools.cs" />
-    <Compile Include="Assets\TextureArrayInspector\Scripts\Coord.cs" />
-    <Compile Include="Assets\TextureArrayInspector\Scripts\CustomSerialization.cs" />
-    <Compile Include="Assets\TextureArrayInspector\Scripts\Matrix.cs" />
-    <Compile Include="Assets\TextureArrayInspector\Scripts\Matrix2.cs" />
-    <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
-    <None Include="Assets\Materials\Shaders\HLSL\Wireframe.shader" />
-    <None Include="Assets\Materials\Shaders\HLSL\Water.hlsl" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
-    <None Include="Assets\Materials\Shaders\HLSL\RiverSurf.hlsl" />
-    <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Oswald-Bold - OFL.txt" />
-    <None Include="Assets\Materials\Shaders\HLSL\WaterShoreSurf.hlsl" />
-    <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Anton OFL.txt" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
-    <None Include="Assets\TextureArrayInspector\Layout\Shaders\Texture.shader" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
-    <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
-    <None Include="Assets\TextureArrayInspector\Layout\Shaders\Icon.shader" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
-    <None Include="Assets\Materials\Shaders\HLSL\Terrain.hlsl" />
-    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
-    <None Include="Assets\Materials\Shaders\HLSL\HighlightUnlitShader.shader" />
-    <None Include="Assets\Materials\Shaders\HLSL\HexCellData.hlsl" />
-    <None Include="Assets\Materials\Shaders\HLSL\HexDataTypes.hlsl" />
-    <None Include="Assets\TextureArrayInspector\Demo\Shaders\Land.shader" />
-    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
-    <None Include="Assets\Materials\Shaders\HLSL\TerrainLitSL.shader" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
-    <None Include="Assets\Materials\Shaders\HLSL\EstuarySurf.hlsl" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
-    <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
-    <None Include="Assets\Materials\Shaders\HLSL\WaterSurf.hlsl" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
-    <None Include="Assets\Materials\Shaders\HLSL\TerrainShaderLab.shader" />
-    <None Include="Assets\Materials\Shaders\HLSL\TerrainSurf.hlsl" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
-    <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Bangers - OFL.txt" />
-    <Reference Include="Unity.Timeline.Editor">
-      <HintPath>C:/Users/levib/Documents/Projects/Unity/HexMap/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VSCode.Editor">
-      <HintPath>C:/Users/levib/Documents/Projects/Unity/HexMap/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.Editor">
-      <HintPath>C:/Users/levib/Documents/Projects/Unity/HexMap/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.Runtime">
-      <HintPath>C:/Users/levib/Documents/Projects/Unity/HexMap/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/levib/Documents/Projects/Unity/HexMap/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Lightweight.Runtime">
-      <HintPath>C:/Users/levib/Documents/Projects/Unity/HexMap/Library/ScriptAssemblies/Unity.RenderPipelines.Lightweight.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Lightweight.Editor">
-      <HintPath>C:/Users/levib/Documents/Projects/Unity/HexMap/Library/ScriptAssemblies/Unity.RenderPipelines.Lightweight.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ugui">
-      <HintPath>C:/Users/levib/Documents/Projects/Unity/HexMap/Library/ScriptAssemblies/Unity.ugui.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Timeline">
-      <HintPath>C:/Users/levib/Documents/Projects/Unity/HexMap/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/levib/Documents/Projects/Unity/HexMap/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\2D\HeaderModifier.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\2D\Light2DEditor.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\2D\Light2DEditorUtility.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\2D\PixelPerfectCameraEditor.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\2D\Renderer2DAnalytics.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\2D\Renderer2DDataEditor.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\2D\Renderer2DMenus.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\2D\Renderer2DUpgrader.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\2D\ShapeEditor\EditablePath\BezierUtility.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\2D\ShapeEditor\EditablePath\ControlPoint.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\2D\ShapeEditor\EditablePath\EditablePath.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\2D\ShapeEditor\EditablePath\EditablePathController.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\2D\ShapeEditor\EditablePath\EditablePathExtensions.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\2D\ShapeEditor\EditablePath\EditablePathUtility.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\2D\ShapeEditor\EditablePath\IEditablePath.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\2D\ShapeEditor\EditablePath\IEditablePathController.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\2D\ShapeEditor\EditablePath\ISnapping.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\2D\ShapeEditor\EditablePath\IUndoObject.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\2D\ShapeEditor\EditablePath\MultipleEditablePathController.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\2D\ShapeEditor\EditablePath\Snapping.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\2D\ShapeEditor\EditorTool\GenericScriptablePath.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\2D\ShapeEditor\EditorTool\GenericScriptablePathInspector.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\2D\ShapeEditor\EditorTool\PathComponentEditor.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\2D\ShapeEditor\EditorTool\PathEditorTool.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\2D\ShapeEditor\EditorTool\PathEditorToolExtensions.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\2D\ShapeEditor\EditorTool\ScriptableData.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\2D\ShapeEditor\EditorTool\ScriptablePath.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\2D\ShapeEditor\EditorTool\ScriptablePathInspector.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\2D\ShapeEditor\GUIFramework\ClickAction.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\2D\ShapeEditor\GUIFramework\CommandAction.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\2D\ShapeEditor\GUIFramework\Control.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\2D\ShapeEditor\GUIFramework\DefaultControl.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\2D\ShapeEditor\GUIFramework\GUIAction.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\2D\ShapeEditor\GUIFramework\GUIState.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\2D\ShapeEditor\GUIFramework\GUISystem.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\2D\ShapeEditor\GUIFramework\GenericControl.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\2D\ShapeEditor\GUIFramework\GenericDefaultControl.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\2D\ShapeEditor\GUIFramework\HoveredControlAction.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\2D\ShapeEditor\GUIFramework\IGUIState.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\2D\ShapeEditor\GUIFramework\LayoutData.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\2D\ShapeEditor\GUIFramework\SliderAction.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\2D\ShapeEditor\Selection\ISelectable.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\2D\ShapeEditor\Selection\ISelection.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\2D\ShapeEditor\Selection\ISelector.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\2D\ShapeEditor\Selection\IndexedSelection.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\2D\ShapeEditor\Selection\PointRectSelector.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\2D\ShapeEditor\Selection\RectSelector.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\2D\ShapeEditor\Selection\SerializableSelection.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\2D\ShapeEditor\Shapes\IShape.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\2D\ShapeEditor\Shapes\Polygon.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\2D\ShapeEditor\Shapes\ShapeExtensions.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\2D\ShapeEditor\Shapes\Spline.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\2D\ShapeEditor\View\CreatePointAction.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\2D\ShapeEditor\View\Drawer.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\2D\ShapeEditor\View\EditablePathView.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\2D\ShapeEditor\View\IDrawer.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\2D\ShapeEditor\View\IEditablePathView.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\AssemblyInfo.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\AssetVersion.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\EditorUtils.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\ForwardRendererDataEditor.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\LWRPAdditionalCameraDataEditor.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\LWRPAdditionalLightDataEditor.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\LightExplorer.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\LightweightRenderPipelineAssetEditor.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\LightweightRenderPipelineCameraEditor.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\LightweightRenderPipelineLightEditor.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\LightweightRenderPipelineMaterialUpgrader.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\MaterialPostprocessor.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\RenderStateDataEditor.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\RendererFeatures\NewRendererFeatureDropdownItem.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\RendererFeatures\RenderObjectsPassFeatureEditor.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\SavedBool.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\ScriptableRendererDataEditor.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\ShaderGUI\BaseShaderGUI.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\ShaderGUI\ParticleGUI.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\ShaderGUI\Shaders\BakedLitShader.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\ShaderGUI\Shaders\LitShader.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\ShaderGUI\Shaders\ParticlesLitShader.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\ShaderGUI\Shaders\ParticlesSimpleLitShader.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\ShaderGUI\Shaders\ParticlesUnlitShader.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\ShaderGUI\Shaders\SimpleLitShader.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\ShaderGUI\Shaders\UnlitShader.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\ShaderGUI\ShadingModels\BakedLitGUI.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\ShaderGUI\ShadingModels\LitGUI.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\ShaderGUI\ShadingModels\SimpleLitGUI.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\ShaderGraph\LightWeightPBRSubShader.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\ShaderGraph\LightWeightSpriteLitSubShader.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\ShaderGraph\LightWeightSpriteUnlitSubShader.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\ShaderGraph\LightWeightUnlitSubShader.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\ShaderGraph\MasterNodes\CreateSpriteLitShaderGraph.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\ShaderGraph\MasterNodes\CreateSpriteUnlitShaderGraph.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\ShaderGraph\MasterNodes\ISpriteLitSubShader.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\ShaderGraph\MasterNodes\ISpriteUnlitSubShader.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\ShaderGraph\MasterNodes\SpriteLitMasterNode.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\ShaderGraph\MasterNodes\SpriteUnlitMasterNode.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\ShaderPreprocessor.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\Shadow\ShadowCascadeSplitGUI.cs" />
+    <Compile Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\UpgradeCommon.cs" />
+    <None Include="C:\Users\levib\Documents\Projects\Unity\HexMap\Packages\com.unity.render-pipelines.lightweight\Editor\RendererFeatures\NewRendererFeature.cs.txt" />
+    <Reference Include="Unity.Postprocessing.Runtime">
+      <HintPath>C:/Users/levib/Documents/Projects/Unity/HexMap/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Editor">
       <HintPath>C:/Users/levib/Documents/Projects/Unity/HexMap/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Rider.Editor">
-      <HintPath>C:/Users/levib/Documents/Projects/Unity/HexMap/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+    <Reference Include="Unity.RenderPipelines.Core.Runtime">
+      <HintPath>C:/Users/levib/Documents/Projects/Unity/HexMap/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
-      <HintPath>C:/Users/levib/Documents/Projects/Unity/HexMap/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Postprocessing.Runtime">
-      <HintPath>C:/Users/levib/Documents/Projects/Unity/HexMap/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualStudio.Editor">
-      <HintPath>C:/Users/levib/Documents/Projects/Unity/HexMap/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
+    <Reference Include="Unity.RenderPipelines.Core.Editor">
+      <HintPath>C:/Users/levib/Documents/Projects/Unity/HexMap/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ShaderGraph.Editor">
       <HintPath>C:/Users/levib/Documents/Projects/Unity/HexMap/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
-      <HintPath>C:/Users/levib/Documents/Projects/Unity/HexMap/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+    <Reference Include="UnityEditor.TestRunner">
+      <HintPath>C:/Users/levib/Documents/Projects/Unity/HexMap/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/levib/Documents/Projects/Unity/HexMap/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ugui.Editor">
-      <HintPath>C:/Users/levib/Documents/Projects/Unity/HexMap/Library/ScriptAssemblies/Unity.ugui.Editor.dll</HintPath>
+    <Reference Include="UnityEngine.TestRunner">
+      <HintPath>C:/Users/levib/Documents/Projects/Unity/HexMap/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.0a5/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -398,6 +354,21 @@
     </Reference>
     <Reference Include="UnityEngine.XRModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.0a5/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.VR">
+      <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.0a5/Editor/Data/UnityExtensions/Unity/UnityVR/Editor/UnityEditor.VR.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Graphs">
+      <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.0a5/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.WindowsStandalone.Extensions">
+      <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.0a5/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Android.Extensions">
+      <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.0a5/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>C:/Users/levib/Documents/Projects/Unity/HexMap/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.0a5/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -753,6 +724,12 @@
     <Reference Include="Boo.Lang">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.0a5/Editor/Data/MonoBleedingEdge/lib/mono/unityscript/Boo.Lang.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Unity.RenderPipelines.Lightweight.Runtime.csproj">
+      <Project>{6E9E86D8-1C6E-8D63-806E-9061C4F90BE9}</Project>
+      <Name>Unity.RenderPipelines.Lightweight.Runtime</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

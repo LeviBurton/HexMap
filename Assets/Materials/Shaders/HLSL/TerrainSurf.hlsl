@@ -2,7 +2,7 @@
 #ifndef TERRAINSURFHLSLINCLUDE_INCLUDED
 #define TERRAINSURFHLSLINCLUDE_INCLUDED
 
-#include "Assets/Materials/Shaders/HexCellData.hlsl"
+#include "Assets/Materials/Shaders/HLSL/HexCellData.hlsl"
 
 // vertexColor stores splat map
 float4 GetTerrainColor_float(float4 vertexColor, float3 worldPos, float3 terrain, int index, Texture2DArray terrainTex, SamplerState ss)
@@ -17,9 +17,9 @@ void Surf_float(float4 vertexColor, float3 worldPos, float3 terrain, Texture2DAr
 	float4 cell1 = GetCellData(uv, 1, ss2);
 	float4 cell2 = GetCellData(uv, 2, ss2);
 
-	//terrain.x = cell0.w;
-	//terrain.y = cell1.w;
-	//terrain.z = cell2.w;
+	terrain.x = cell0.w;
+	terrain.y = cell1.w;
+	terrain.z = cell2.w;
 
 	float4 c = GetTerrainColor_float(vertexColor, worldPos, terrain, 0, terrainTex, ss) +
 		GetTerrainColor_float(vertexColor, worldPos, terrain, 1, terrainTex, ss) +

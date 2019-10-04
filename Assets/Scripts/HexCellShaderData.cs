@@ -23,7 +23,7 @@ public class HexCellShaderData : MonoBehaviour
         }
 
         Shader.SetGlobalVector(
-            "_HexCellData_TexelSize",
+            "_TexelSize",
             new Vector4(1f / x, 1f / z, x, z)
         );
 

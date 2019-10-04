@@ -2,7 +2,7 @@
 #ifndef WATERSURFHLSLINCLUDE_INCLUDED
 #define WATERSURFHLSLINCLUDE_INCLUDED
 
-#include "Assets/Materials/Shaders/Water.hlsl"
+#include "Assets/Materials/Shaders/HLSL/Water.hlsl"
 
 void Surf_float(float2 worldXZ, float time, Texture2D noiseTex, float4 mainColor, SamplerState ss, out float4 Out)
 {
