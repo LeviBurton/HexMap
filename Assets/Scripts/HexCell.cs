@@ -4,7 +4,6 @@ using System.IO;
 
 public class HexCell : MonoBehaviour
 {
-
     public HexCoordinates coordinates;
 
     public RectTransform uiRect;
@@ -12,6 +11,33 @@ public class HexCell : MonoBehaviour
     public HexGridChunk chunk;
 
     public int Index { get; set; }
+    int visibility;
+
+    public bool IsVisible
+    {
+        get
+        {
+            return visibility > 0;
+        }
+    }
+
+	public void IncreaseVisibility()
+    {
+        visibility += 1;
+        if (visibility == 1)
+        {
+            ShaderData.RefreshVisibility(this);
+        }
+    }
+
+    public void DecreaseVisibility()
+    {
+        visibility -= 1;
+        if (visibility == 0)
+        {
+            ShaderData.RefreshVisibility(this);
+        }
+    }
 
     public int Elevation
     {

@@ -2,7 +2,6 @@
 
 public class HexCellShaderData : MonoBehaviour
 {
-
     Texture2D cellTexture;
     Color32[] cellTextureData;
 
@@ -38,6 +37,12 @@ public class HexCellShaderData : MonoBehaviour
                 cellTextureData[i] = new Color32(0, 0, 0, 0);
             }
         }
+        enabled = true;
+    }
+
+    public void RefreshVisibility(HexCell cell)
+    {
+        cellTextureData[cell.Index].r = cell.IsVisible ? (byte)255 : (byte)0;
         enabled = true;
     }
 

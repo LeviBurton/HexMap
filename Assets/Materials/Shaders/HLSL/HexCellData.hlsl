@@ -9,5 +9,4 @@ void GetCellData_float(float3 inUV, int index, Texture2D hexCellData, float2 tex
 	uv.y = (row + 0.5) * texelSize.y;
 	data = SAMPLE_TEXTURE2D_LOD(hexCellData, ss, float4(uv, 0, 0), 0);
 	data.w *= 255;
-
 }
