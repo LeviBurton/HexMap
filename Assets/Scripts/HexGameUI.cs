@@ -37,6 +37,15 @@ public class HexGameUI : MonoBehaviour
         enabled = !toggle;
         grid.ShowUI(!toggle);
         grid.ClearPath();
+
+        if (toggle)
+        {
+            Shader.SetGlobalInt("_HexMapEditMode", 1);
+        }
+        else
+        {
+            Shader.SetGlobalInt("_HexMapEditMode", 0);
+        }
     }
 
     bool UpdateCurrentCell()
