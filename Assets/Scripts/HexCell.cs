@@ -13,6 +13,8 @@ public class HexCell : MonoBehaviour
     public int Index { get; set; }
     int visibility;
 
+    public bool IsExplored { get; private set; }
+
     public bool IsVisible
     {
         get
@@ -26,6 +28,7 @@ public class HexCell : MonoBehaviour
         visibility += 1;
         if (visibility == 1)
         {
+            IsExplored = true;
             ShaderData.RefreshVisibility(this);
         }
     }
