@@ -184,7 +184,8 @@ public class HexGridChunk : MonoBehaviour
                 }
                 water.AddTriangle(
                     c2, e2, c2 + HexMetrics.GetWaterBridge(direction.Next())
-                ); indices.z = nextNeighbor.Index;
+                );
+                indices.z = nextNeighbor.Index;
 
                 water.AddTriangleCellData(
                     indices, weights1, weights2, weights3
