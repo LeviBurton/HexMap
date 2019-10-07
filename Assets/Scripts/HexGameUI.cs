@@ -40,11 +40,13 @@ public class HexGameUI : MonoBehaviour
 
         if (toggle)
         {
-            Shader.SetGlobalInt("_HexMapEditMode", 1);
+            Shader.EnableKeyword("_HEXMAPEDITMODE");
+       
         }
         else
         {
-            Shader.SetGlobalInt("_HexMapEditMode", 0);
+            Shader.DisableKeyword("_HEXMAPEDITMODE");
+     
         }
     }
 

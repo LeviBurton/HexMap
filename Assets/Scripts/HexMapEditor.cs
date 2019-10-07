@@ -45,13 +45,11 @@ public class HexMapEditor : MonoBehaviour
     {
         if (visible)
         {
-            // This is how we set a blackboard property.  The blackboard property must NOT be exposed for this to work!
-            // hackish.  I pass a float because I don't know how to pass a bool -- the receiving end only takes "vector1".
-            Shader.SetGlobalInt("_GridOn", 1);
+            Shader.EnableKeyword("_GRID_ON");
         }
         else
         {
-            Shader.SetGlobalInt("_GridOn", 0);
+            Shader.DisableKeyword("_GRID_ON");
         }
     }
 
