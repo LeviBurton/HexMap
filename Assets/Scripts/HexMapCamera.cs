@@ -45,11 +45,26 @@ public class HexMapCamera : MonoBehaviour {
 			AdjustRotation(rotationDelta);
 		}
 
-		float xDelta = Input.GetAxis("Horizontal");
-		float zDelta = Input.GetAxis("Vertical");
-		if (xDelta != 0f || zDelta != 0f) {
-			AdjustPosition(xDelta, zDelta);
-		}
+        if (Input.touchCount > 0)
+        {
+            // Get movement of the finger since last frame
+            float xDelta = Input.GetTouch(0).deltaPosition.x;
+            float zDelta = Input.GetTouch(0).deltaPosition.y;
+            if (xDelta != 0f || zDelta != 0f)
+            {
+                AdjustPosition(xDelta, zDelta);
+            }
+        }
+        else
+        {
+            float xDelta = Input.GetAxis("Horizontal");
+            float zDelta = Input.GetAxis("Vertical");
+            if (xDelta != 0f || zDelta != 0f)
+            {
+                AdjustPosition(xDelta, zDelta);
+            }
+        }
+      
 	}
 
     public static void ValidatePosition()

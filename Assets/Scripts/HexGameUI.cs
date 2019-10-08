@@ -10,6 +10,12 @@ public class HexGameUI : MonoBehaviour
     HexCell currentCell;
     HexUnit selectedUnit;
 
+    private void Awake()
+    {
+        Shader.DisableKeyword("_HEXMAPEDITMODE");
+        Shader.DisableKeyword("_GRID_ON");
+    }
+
     void Update()
     {
         if (!EventSystem.current.IsPointerOverGameObject())
