@@ -83,7 +83,9 @@ public class HexCell : MonoBehaviour
                 return;
             }
             waterLevel = value;
+          
             ValidateRivers();
+
             Refresh();
         }
     }
