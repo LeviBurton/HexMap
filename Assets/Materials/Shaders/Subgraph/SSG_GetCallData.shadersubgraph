@@ -30,7 +30,7 @@
             "typeInfo": {
                 "fullName": "UnityEditor.ShaderGraph.ShaderKeyword"
             },
-            "JSONnodeData": "{\n    \"m_Guid\": {\n        \"m_GuidSerialized\": \"ddf49f50-7dd6-4ad5-af9f-b886d876cb9b\"\n    },\n    \"m_Name\": \"HexMapEditMode\",\n    \"m_DefaultReferenceName\": \"BOOLEAN_6C778BCC_ON\",\n    \"m_OverrideReferenceName\": \"_HEXMAPEDITMODE\",\n    \"m_GeneratePropertyBlock\": true,\n    \"m_KeywordType\": 0,\n    \"m_KeywordDefinition\": 1,\n    \"m_KeywordScope\": 1,\n    \"m_Entries\": [],\n    \"m_Value\": 1,\n    \"m_IsEditable\": true,\n    \"m_IsExposable\": true\n}"
+            "JSONnodeData": "{\n    \"m_Guid\": {\n        \"m_GuidSerialized\": \"ddf49f50-7dd6-4ad5-af9f-b886d876cb9b\"\n    },\n    \"m_Name\": \"HexMapEditMode\",\n    \"m_DefaultReferenceName\": \"BOOLEAN_6C778BCC_ON\",\n    \"m_OverrideReferenceName\": \"_HEX_MAP_EDIT_MODE\",\n    \"m_GeneratePropertyBlock\": true,\n    \"m_KeywordType\": 0,\n    \"m_KeywordDefinition\": 1,\n    \"m_KeywordScope\": 1,\n    \"m_Entries\": [],\n    \"m_Value\": 0,\n    \"m_IsEditable\": true,\n    \"m_IsExposable\": true\n}"
         }
     ],
     "m_SerializableNodes": [

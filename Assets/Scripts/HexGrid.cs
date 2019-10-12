@@ -75,6 +75,16 @@ public class HexGrid : MonoBehaviour
         }
     }
 
+    public HexCell GetCell(int xOffset, int zOffset)
+    {
+        return cells[xOffset + zOffset * cellCountX];
+    }
+
+    public HexCell GetCell(int cellIndex)
+    {
+        return cells[cellIndex];
+    }
+
     public void AddUnit(HexUnit unit, HexCell location, float orientation)
     {
         units.Add(unit);
