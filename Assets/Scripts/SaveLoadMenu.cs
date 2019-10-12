@@ -15,7 +15,7 @@ public class SaveLoadMenu : MonoBehaviour
     public HexGrid hexGrid;
 
     bool saveMode;
-    const int mapFileVersion = 3;
+    const int mapFileVersion = 4;
 
     void Save(string path)
     {
