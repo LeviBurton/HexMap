@@ -92,7 +92,31 @@ public class HexMapGenerator : MonoBehaviour
         Both, North, South
     }
 
+    struct Biome
+    {
+        public int terrain, plant;
+
+        public Biome(int terrain, int plant)
+        {
+            this.terrain = terrain;
+            this.plant = plant;
+        }
+    }
+
+    // The coldest and driest biomes get no plants at all. 
+    // Beyond that, we get more plants the warmer and wetter it is. 
+    static Biome[] biomes = {
+        new Biome(0, 0), new Biome(4, 0), new Biome(4, 0), new Biome(4, 0),
+        new Biome(0, 0), new Biome(2, 0), new Biome(2, 1), new Biome(2, 2),
+        new Biome(0, 0), new Biome(1, 0), new Biome(1, 1), new Biome(1, 2),
+        new Biome(0, 0), new Biome(1, 1), new Biome(1, 2), new Biome(1, 3)
+    };
+
     public HemisphereMode hemisphere;
+
+    static float[] temperatureBands = { 0.1f, 0.3f, 0.6f };
+
+    static float[] moistureBands = { 0.12f, 0.28f, 0.85f };
 
     HexCellPriorityQueue searchFrontier;
 
@@ -556,39 +580,120 @@ public class HexMapGenerator : MonoBehaviour
     void SetTerrainType()
     {
         temperatureJitterChannel = Random.Range(0, 4);
+        int rockDesertElevation =
+            elevationMaximum - (elevationMaximum - waterLevel) / 2;
 
         for (int i = 0; i < cellCount; i++)
         {
             HexCell cell = grid.GetCell(i);
             float temperature = DetermineTemperature(cell);
-            cell.SetMapData(temperature);
             float moisture = climate[i].moisture;
             if (!cell.IsUnderwater)
             {
-                if (moisture < 0.05f)
+                int t = 0;
+                for (; t < temperatureBands.Length; t++)
                 {
-                    cell.TerrainTypeIndex = 4;
+                    if (temperature < temperatureBands[t])
+                    {
+                        break;
+                    }
                 }
-                else if (moisture < 0.12f)
+                int m = 0;
+                for (; m < moistureBands.Length; m++)
                 {
-                    cell.TerrainTypeIndex = 0;
+                    if (moisture < moistureBands[m])
+                    {
+                        break;
+                    }
                 }
-                else if (moisture < 0.28f)
+                Biome cellBiome = biomes[t * 4 + m];
+
+                if (cellBiome.terrain == 0)
                 {
-                    cell.TerrainTypeIndex = 3;
+                    if (cell.Elevation >= rockDesertElevation)
+                    {
+                        cellBiome.terrain = 3;
+                    }
                 }
-                else if (moisture < 0.85f)
+                else if (cell.Elevation == elevationMaximum)
                 {
-                    cell.TerrainTypeIndex = 1;
+                    // force cells that are at maximum elevation to become snowcaps, regardless how warm they are, as long as they're not too dry. 
+                    cellBiome.terrain = 4;
                 }
-                else
+
+                // no plants in snow and more around rivers
+                if (cellBiome.terrain == 4)
                 {
-                    cell.TerrainTypeIndex = 2;
+                    cellBiome.plant = 0;
                 }
+                else if (cellBiome.plant < 3 && cell.HasRiver)
+                {
+                    cellBiome.plant += 1;
+                }
+
+                cell.TerrainTypeIndex = cellBiome.terrain;
+                cell.PlantLevel = cellBiome.plant;
             }
             else
             {
-                cell.TerrainTypeIndex = 2;
+                // underwater
+                int terrain;
+                if (cell.Elevation == waterLevel - 1)
+                {
+                    int cliffs = 0, slopes = 0;
+                    for (
+                        HexDirection d = HexDirection.NE; d <= HexDirection.NW; d++
+                    )
+                    {
+                        HexCell neighbor = cell.GetNeighbor(d);
+                        if (!neighbor)
+                        {
+                            continue;
+                        }
+                        int delta = neighbor.Elevation - cell.WaterLevel;
+                        if (delta == 0)
+                        {
+                            slopes += 1;
+                        }
+                        else if (delta > 0)
+                        {
+                            cliffs += 1;
+                        }
+                    }
+                    if (cliffs + slopes > 3)
+                    {
+                        terrain = 1;
+                    }
+                    else if (cliffs > 0)
+                    {
+                        terrain = 3;
+                    }
+                    else if (slopes > 0)
+                    {
+                        terrain = 0;
+                    }
+                    else
+                    {
+                        terrain = 1;
+                    }
+                }
+                else if (cell.Elevation >= waterLevel)
+                {
+                    terrain = 1;
+                }
+                else if (cell.Elevation < 0)
+                {
+                    terrain = 3;
+                }
+                else
+                {
+                    terrain = 2;
+                }
+                if (terrain == 1 && temperature < temperatureBands[0])
+                {
+                    terrain = 2;
+                }
+                cell.TerrainTypeIndex = terrain;
             }
         }
     }
