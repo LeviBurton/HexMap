@@ -570,6 +570,11 @@ public class HexCell : MonoBehaviour
         RefreshSelfOnly();
     }
 
+    public void SetMapData(float data)
+    {
+        ShaderData.SetMapData(this, data);
+    }
+
     void RefreshPosition()
     {
         Vector3 position = transform.localPosition;
