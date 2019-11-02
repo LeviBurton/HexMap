@@ -14,6 +14,7 @@ public class HexCell : MonoBehaviour
     int visibility;
     bool explored;
 
+    public int ColumnIndex { get; set; }
     public bool Explorable { get; set; }
     public int ViewElevation
     {

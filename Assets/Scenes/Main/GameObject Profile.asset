@@ -45,16 +45,16 @@ MonoBehaviour:
   active: 0
   m_AdvancedMode: 0
   postExposure:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 1
   contrast:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0.5
     min: -100
     max: 100
   colorFilter:
     m_OverrideState: 0
-    m_Value: {r: 1, g: 1, b: 1, a: 1}
+    m_Value: {r: 0.8784314, g: 0.38431373, b: 0.4742258, a: 1}
     hdr: 1
     showAlpha: 0
     showEyeDropper: 1
@@ -65,7 +65,7 @@ MonoBehaviour:
     max: 180
   saturation:
     m_OverrideState: 0
-    m_Value: 8.7
+    m_Value: 100
     min: -100
     max: 100
 --- !u!114 &-4503729543617295436
@@ -161,10 +161,10 @@ MonoBehaviour:
   m_AdvancedMode: 0
   type:
     m_OverrideState: 1
-    m_Value: 2
+    m_Value: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0.339
+    m_Value: 0.172
     min: 0
     max: 1
   response:
@@ -194,15 +194,15 @@ MonoBehaviour:
     m_Value: 2
   gaussianStart:
     m_OverrideState: 1
-    m_Value: 8.18
+    m_Value: 50.9
     min: 0
   gaussianEnd:
     m_OverrideState: 1
-    m_Value: 26.32
+    m_Value: 143.88
     min: 0
   gaussianMaxRadius:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 1.055
     min: 0.5
     max: 1.5
   highQualitySampling:
@@ -210,16 +210,16 @@ MonoBehaviour:
     m_Value: 0
   focusDistance:
     m_OverrideState: 1
-    m_Value: 0.8
+    m_Value: 30
     min: 0.1
   aperture:
     m_OverrideState: 1
-    m_Value: 2.41
+    m_Value: 5
     min: 1
     max: 32
   focalLength:
     m_OverrideState: 1
-    m_Value: 20.08
+    m_Value: 180
     min: 1
     max: 300
   bladeCount:
@@ -249,11 +249,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 221518ef91623a7438a71fef23660601, type: 3}
   m_Name: WhiteBalance
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   m_AdvancedMode: 0
   temperature:
     m_OverrideState: 1
-    m_Value: 20
+    m_Value: 33.3
     min: -100
     max: 100
   tint:
@@ -273,7 +273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 899c54efeace73346a0a16faa3afe726, type: 3}
   m_Name: Vignette
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   m_AdvancedMode: 0
   color:
     m_OverrideState: 1

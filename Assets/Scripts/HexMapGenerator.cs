@@ -142,9 +142,10 @@ public class HexMapGenerator : MonoBehaviour
     List<ClimateData> climate = new List<ClimateData>();
     List<ClimateData> nextClimate = new List<ClimateData>();
 
-    public void GenerateMap(int x, int z)
+    public void GenerateMap(int x, int z, bool wrapping)
     {
         Random.State originalRandomState = Random.state;
+
         if (!useFixedSeed)
         {
             seed = Random.Range(0, int.MaxValue);
@@ -152,24 +153,29 @@ public class HexMapGenerator : MonoBehaviour
             seed ^= (int)Time.unscaledTime;
             seed &= int.MaxValue;
         }
+
         Random.InitState(seed);
 
         cellCount = x * z;
-        grid.CreateMap(x, z);
+        grid.CreateMap(x, z, wrapping);
+
         if (searchFrontier == null)
         {
             searchFrontier = new HexCellPriorityQueue();
         }
+
         for (int i = 0; i < cellCount; i++)
         {
             grid.GetCell(i).WaterLevel = waterLevel;
         }
+
         CreateRegions();
         CreateLand();
         ErodeLand();
         CreateClimate();
         CreateRivers();
         SetTerrainType();
+
         for (int i = 0; i < cellCount; i++)
         {
             grid.GetCell(i).SearchPhase = 0;
@@ -189,12 +195,17 @@ public class HexMapGenerator : MonoBehaviour
             regions.Clear();
         }
 
+        int borderX = grid.wrapping ? regionBorder : mapBorderX;
         MapRegion region;
         switch (regionCount)
         {
             default:
-                region.xMin = mapBorderX;
-                region.xMax = grid.cellCountX - mapBorderX;
+                if (grid.wrapping)
+                {
+                    borderX = 0;
+                }
+                region.xMin = borderX;
+                region.xMax = grid.cellCountX - borderX;
                 region.zMin = mapBorderZ;
                 region.zMax = grid.cellCountZ - mapBorderZ;
                 regions.Add(region);
@@ -213,6 +224,10 @@ public class HexMapGenerator : MonoBehaviour
                 }
                 else
                 {
+                    if (grid.wrapping)
+                    {
+                        borderX = 0;
+                    }
                     region.xMin = mapBorderX;
                     region.xMax = grid.cellCountX - mapBorderX;
                     region.zMin = mapBorderZ;

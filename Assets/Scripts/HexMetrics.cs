@@ -8,8 +8,9 @@ public static class HexMetrics {
 	public const float outerRadius = 10f;
 
 	public const float innerRadius = outerRadius * outerToInner;
+    public const float innerDiameter = innerRadius * 2f;
 
-	public const float solidFactor = 0.8f;
+    public const float solidFactor = 0.8f;
 
 	public const float blendFactor = 1f - solidFactor;
 
@@ -55,7 +56,16 @@ public static class HexMetrics {
 
 	public const float hashGridScale = 0.25f;
 
-	static HexHash[] hashGrid;
+    public static int wrapSize;
+    public static bool Wrapping
+    {
+        get
+        {
+            return wrapSize > 0;
+        }
+    }
+
+    static HexHash[] hashGrid;
 
 	static Vector3[] corners = {
 		new Vector3(0f, 0f, outerRadius),
@@ -75,14 +85,27 @@ public static class HexMetrics {
 
 	public static Texture2D noiseSource;
 
-	public static Vector4 SampleNoise (Vector3 position) {
-		return noiseSource.GetPixelBilinear(
-			position.x * noiseScale,
-			position.z * noiseScale
-		);
-	}
+    public static Vector4 SampleNoise(Vector3 position)
+    {
+        Vector4 sample = noiseSource.GetPixelBilinear(
+            position.x * noiseScale,
+            position.z * noiseScale
+        );
 
-	public static void InitializeHashGrid (int seed) {
+        if (Wrapping && position.x < innerDiameter * 1.5f)
+        {
+            Vector4 sample2 = noiseSource.GetPixelBilinear(
+                (position.x + wrapSize * innerDiameter) * noiseScale,
+                position.z * noiseScale
+            );
+            sample = Vector4.Lerp(
+                sample2, sample, position.x * (1f / innerDiameter) - 0.5f
+            );
+        }
+        return sample;
+    }
+
+    public static void InitializeHashGrid (int seed) {
 		hashGrid = new HexHash[hashGridSize * hashGridSize];
 		Random.State currentState = Random.state;
 		Random.InitState(seed);

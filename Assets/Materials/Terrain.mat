@@ -93,7 +93,7 @@ Material:
     - Color_402F93D6: {r: 0, g: 0, b: 0, a: 0}
     - Color_4B9F3FB1: {r: 0, g: 0, b: 0, a: 0}
     - Color_535C99BD: {r: 0.40784314, g: 0.38039216, b: 0.35686275, a: 1}
-    - Color_D339FB6D: {r: 1, g: 1, b: 1, a: 0.36078432}
+    - Color_D339FB6D: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

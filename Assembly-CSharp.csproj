@@ -154,6 +154,7 @@
     <None Include="Assets\Materials\Shaders\HLSL\Terrain.hlsl" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\Materials\Shaders\HLSL\HexMetrics.hlsl" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\Materials\Shaders\HLSL\HexCellData.hlsl" />
     <None Include="Assets\Materials\Shaders\HLSL\HexDataTypes.hlsl" />
