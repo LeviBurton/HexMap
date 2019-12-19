@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b2425a2284af743826c689403a4924, type: 3}
+  m_Name: ASE_TerrainGrid
+  m_EditorClassIdentifier: 
+  m_functionInfo: "// Made with Amplify Shader Editor\n// Available at the Unity
+    Asset Store - http://u3d.as/y3X \n/*ASEBEGIN\nVersion=17500\n217;320;974;559;1258.427;644.9143;1.492381;True;False\nNode;AmplifyShaderEditor.FunctionInput;1;-594.9619,-258.6122;Inherit;False;WorldPos;3;0;False;1;0;FLOAT3;0,0,0;False;1;FLOAT3;0\nNode;AmplifyShaderEditor.BreakToComponentsNode;2;-422.9622,-253.6122;Inherit;False;FLOAT3;1;0;FLOAT3;0,0,0;False;16;FLOAT;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4;FLOAT;5;FLOAT;6;FLOAT;7;FLOAT;8;FLOAT;9;FLOAT;10;FLOAT;11;FLOAT;12;FLOAT;13;FLOAT;14;FLOAT;15\nNode;AmplifyShaderEditor.SimpleMultiplyOpNode;3;290.3731,-394.0028;Inherit;False;2;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.SimpleDivideOpNode;4;184.2392,-273.9885;Inherit;False;2;0;FLOAT;1;False;1;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.SimpleMultiplyOpNode;5;22.10497,-236.4373;Inherit;False;2;2;0;FLOAT;4;False;1;FLOAT;8.660254;False;1;FLOAT;0\nNode;AmplifyShaderEditor.SimpleDivideOpNode;7;127.1914,61.8518;Inherit;False;2;0;FLOAT;1;False;1;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.SimpleMultiplyOpNode;8;245.1915,-77.14822;Inherit;False;2;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.SimpleMultiplyOpNode;6;-46.80861,165.8518;Inherit;False;2;2;0;FLOAT;2;False;1;FLOAT;15;False;1;FLOAT;0\nNode;AmplifyShaderEditor.DynamicAppendNode;10;475.58,-186.1631;Inherit;False;FLOAT4;4;0;FLOAT;0;False;1;FLOAT;0;False;2;FLOAT;0;False;3;FLOAT;0;False;1;FLOAT4;0\nNode;AmplifyShaderEditor.SamplerNode;9;679.8607,-216.0993;Inherit;True;Property;_TextureSample0;Texture
+    Sample 0;0;0;Create;True;0;0;False;0;-1;56867b1c88e40a140a9df06b66d40f51;None;True;0;False;white;Auto;False;Object;-1;Auto;Texture2D;6;0;SAMPLER2D;;False;1;FLOAT2;0,0;False;2;FLOAT;0;False;3;FLOAT2;0,0;False;4;FLOAT2;0,0;False;5;FLOAT;1;False;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4\nNode;AmplifyShaderEditor.FunctionOutput;0;1059.471,-210.109;Inherit;False;True;-1;Output;0;False;1;0;COLOR;0,0,0,0;False;1;COLOR;0\nWireConnection;2;0;1;0\nWireConnection;3;0;2;0\nWireConnection;3;1;4;0\nWireConnection;4;1;5;0\nWireConnection;7;1;6;0\nWireConnection;8;0;2;2\nWireConnection;8;1;7;0\nWireConnection;10;0;3;0\nWireConnection;10;1;8;0\nWireConnection;9;1;10;0\nWireConnection;0;0;9;0\nASEEND*/\n//CHKSM=7DAE9B41FB462DEE3380C08162EC8A9753BD94DD"
+  m_functionName: 
+  m_description: 
+  m_additionalIncludes:
+    m_additionalIncludes: []
+    m_outsideIncludes: []
+  m_additionalPragmas:
+    m_additionalPragmas: []
+    m_outsidePragmas: []
+  m_additionalDirectives:
+    m_validData: 0
+    m_isDirty: 1
+    m_moduleName: ' Additional Directives'
+    m_independentModule: 1
+    m_additionalDirectives:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    m_shaderFunctionDirectives: []
+    m_nativeDirectives: []
+    m_nativeDirectivesIndex: -1
+    m_nativeDirectivesFoldout: 0
+    m_directivesSaveItems:
+    - LineType: 0
+      LineValue: 
+      GUIDToggle: 0
+      GUIDValue: 
+      Origin: 2
+    - LineType: 0
+      LineValue: 
+      GUIDToggle: 0
+      GUIDValue: 
+      Origin: 2
+    - LineType: 0
+      LineValue: 
+      GUIDToggle: 0
+      GUIDValue: 
+      Origin: 2
+    - LineType: 0
+      LineValue: 
+      GUIDToggle: 0
+      GUIDValue: 
+      Origin: 2
+    - LineType: 0
+      LineValue: 
+      GUIDToggle: 0
+      GUIDValue: 
+      Origin: 2
+  m_nodeCategory: 3
+  m_customNodeCategory: 
+  m_previewPosition: 0
+  m_hidden: 0
